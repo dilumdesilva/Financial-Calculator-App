@@ -16,6 +16,8 @@
 		4E14948023F476B600E84126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E14947E23F476B600E84126 /* LaunchScreen.storyboard */; };
 		4E14948B23F476B600E84126 /* FinanceCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14948A23F476B600E84126 /* FinanceCalculatorTests.swift */; };
 		4E14949623F476B600E84126 /* FinanceCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14949523F476B600E84126 /* FinanceCalculatorUITests.swift */; };
+		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
+		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4E14949123F476B600E84126 /* FinanceCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E14949523F476B600E84126 /* FinanceCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCalculatorUITests.swift; sourceTree = "<group>"; };
 		4E14949723F476B600E84126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
+		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 		4E1494A823F4B65C00E84126 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4EAD2E2523F5F61400E99281 /* CustomKeyboard */,
 				4E14947E23F476B600E84126 /* LaunchScreen.storyboard */,
 				4E14947623F476B000E84126 /* Main.storyboard */,
 			);
@@ -185,6 +190,15 @@
 				4E14947423F476B000E84126 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4EAD2E2523F5F61400E99281 /* CustomKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */,
+				4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */,
+			);
+			path = CustomKeyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +308,7 @@
 				4E14948023F476B600E84126 /* LaunchScreen.storyboard in Resources */,
 				4E14947D23F476B600E84126 /* Assets.xcassets in Resources */,
 				4E14947823F476B000E84126 /* Main.storyboard in Resources */,
+				4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E14947B23F476B000E84126 /* FinanceCalculator.xcdatamodeld in Sources */,
+				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
 				4E14947523F476B000E84126 /* ViewController.swift in Sources */,
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
 				4E14947323F476B000E84126 /* SceneDelegate.swift in Sources */,
