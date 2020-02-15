@@ -25,7 +25,7 @@ private let pressedKeyColour = UIColor(red: 50 / 255, green: 50 / 255, blue: 50 
 }
 
 class CustomKeyboard: UIView {
-    // Outlet connections related the custom keyboard UI elements
+    // MARK: - Outlet connections of the custom keyboard UI elements
     // Outlets of controller buttons (hide,backspace)
     @IBOutlet var btnHideKeyboard: UIButton!
     @IBOutlet var btnBackspace: UIButton!
@@ -58,24 +58,59 @@ class CustomKeyboard: UIView {
     // Keyboard - vController connection variables
     weak var delegate: CustomKeyboardDelegate?
     
-    // Initialization of the custom keyboard
+    // MARK: - Initialization of the custom keyboard
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initializeKeyboard()
+        NotificationCenter.default.addObserver(self, selector: #selector(activateMinusButton(notification:)), name: NSNotification.Name(rawValue: "activateMinusButton"), object: nil)
+    }
     
-    // Functions to handle button clicks
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initializeKeyboard()
+    }
+    
+    func initializeKeyboard() {
+        let xibFileName = "CustomKeyboard"
+        let view = Bundle.main.loadNibNamed(xibFileName, owner: self, options: nil)![0] as! UIView
+        self.addSubview(view)
+        view.frame = self.bounds
+    }
+    
+    // MARK: - Functions to handle button clicks
     // Triggers for numeric button (0-9) clicks
-    @IBAction func handleNumericBtnClick(_ sender: UIButton) {}
+    @IBAction func handleNumericBtnClick(_ sender: UIButton) {
+        self.delegate?.numericKeyPressed(key: sender.tag)
+    }
     
     // Triggers for symbolic button (period and minus) clicks
-    @IBAction func handleSymbolicBtnClick(_ sender: UIButton) {}
+    @IBAction func handleSymbolicBtnClick(_ sender: UIButton) {
+        if let symbol = sender.titleLabel?.text, symbol.count > 0 {
+            self.delegate?.symbolPressed(symbol: symbol)
+        }
+    }
     
     // Triggers for backspace button click
-    @IBAction func handleBackspaceBtnClick(_ sender: Any) {}
+    @IBAction func handleBackspaceBtnClick(_ sender: Any) {
+        self.delegate?.backspacePressed()
+    }
     
     // Triggers for hide keyboard layout button click
-    @IBAction func handleHideKeyboardBtnClick(_ sender: Any) {}
+    @IBAction func handleHideKeyboardBtnClick(_ sender: Any) {
+        self.delegate?.hideKeyboardPressed()
+    }
     
     // Button Activator Functions
-    @objc func activateMinusButton(notification: NSNotification) {}
+    @objc func activateMinusButton(notification: NSNotification) {
+        btnSKeyMinus.isUserInteractionEnabled = true
+    }
     
     // Funtion to update button appearance based on button state
-    fileprivate func changeBtnAppearance() {}
+    fileprivate func changeBtnAppearance() {
+        for keyboardButton in allButtons {
+            keyboardButton.setTitleColor(btnFontColor, for: .normal)
+            keyboardButton.setTitleColor(btnPressedFontColor, for: [.selected, .highlighted])
+            //TODO: Use a condition to change the background color of the button based on the states
+        }
+    }
 }
