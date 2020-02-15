@@ -26,6 +26,7 @@ private let pressedKeyColour = UIColor(red: 50 / 255, green: 50 / 255, blue: 50 
 
 class CustomKeyboard: UIView {
     // MARK: - Outlet connections of the custom keyboard UI elements
+    
     // Outlets of controller buttons (hide,backspace)
     @IBOutlet var btnHideKeyboard: UIButton!
     @IBOutlet var btnBackspace: UIButton!
@@ -59,6 +60,7 @@ class CustomKeyboard: UIView {
     weak var delegate: CustomKeyboardDelegate?
     
     // MARK: - Initialization of the custom keyboard
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeKeyboard()
@@ -73,31 +75,32 @@ class CustomKeyboard: UIView {
     func initializeKeyboard() {
         let xibFileName = "CustomKeyboard"
         let view = Bundle.main.loadNibNamed(xibFileName, owner: self, options: nil)![0] as! UIView
-        self.addSubview(view)
-        view.frame = self.bounds
+        addSubview(view)
+        view.frame = bounds
     }
     
     // MARK: - Functions to handle button clicks
+    
     // Triggers for numeric button (0-9) clicks
     @IBAction func handleNumericBtnClick(_ sender: UIButton) {
-        self.delegate?.numericKeyPressed(key: sender.tag)
+        delegate?.numericKeyPressed(key: sender.tag)
     }
     
     // Triggers for symbolic button (period and minus) clicks
     @IBAction func handleSymbolicBtnClick(_ sender: UIButton) {
         if let symbol = sender.titleLabel?.text, symbol.count > 0 {
-            self.delegate?.symbolPressed(symbol: symbol)
+            delegate?.symbolPressed(symbol: symbol)
         }
     }
     
     // Triggers for backspace button click
     @IBAction func handleBackspaceBtnClick(_ sender: Any) {
-        self.delegate?.backspacePressed()
+        delegate?.backspacePressed()
     }
     
     // Triggers for hide keyboard layout button click
     @IBAction func handleHideKeyboardBtnClick(_ sender: Any) {
-        self.delegate?.hideKeyboardPressed()
+        delegate?.hideKeyboardPressed()
     }
     
     // Button Activator Functions
@@ -110,7 +113,7 @@ class CustomKeyboard: UIView {
         for keyboardButton in allButtons {
             keyboardButton.setTitleColor(btnFontColor, for: .normal)
             keyboardButton.setTitleColor(btnPressedFontColor, for: [.selected, .highlighted])
-            //TODO: Use a condition to change the background color of the button based on the states
+            // TODO: Use a condition to change the background color of the button based on the states
         }
     }
 }
