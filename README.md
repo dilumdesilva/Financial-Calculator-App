@@ -15,7 +15,7 @@ The **financial-calculator app** has the capability of undertaking typical finan
 - Estimating number of payments.
 - Saving all user data persistently.
 
-**Note: For the purpose of this application all payments and compound interest and be considered to be monthly. So, for example 60 payments is equivalent to 5 years**
+**Note: For the purpose of this application all payments and compound interest and be considered to be monthly. So, for example 60 payments is equivalent to 5 years.**
 
 Above estimations/calculations have been done based on the financial data given in following Table.
 
