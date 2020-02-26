@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,6 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="5py-fb-gUj" kind="relationship" relationship="viewControllers" id="m5X-r4-8D0"/>
@@ -103,7 +106,71 @@
                     <view key="view" contentMode="scaleToFill" id="ouy-Hg-ejc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryY-5C-Zmu">
+                                <rect key="frame" x="10" y="88" width="394" height="725"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WQU-cL-n7v">
+                                        <rect key="frame" x="0.0" y="20" width="394" height="685"/>
+                                        <color key="backgroundColor" red="0.59996356870000001" green="0.12294519869999999" blue="0.0" alpha="0.99086707750000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R2H-sH-0vY">
+                                            <size key="itemSize" width="150" height="159"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jqL-3p-HDA">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="159"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dro-EF-wpL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="159"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-bd-HYs">
+                                                            <rect key="frame" x="33" y="30" width="84" height="74"/>
+                                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calculation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tJ-2L-jzV">
+                                                            <rect key="frame" x="8" y="114" width="134" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="0tJ-2L-jzV" secondAttribute="bottom" constant="24" id="34b-0Y-EDm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9c2-bd-HYs" secondAttribute="trailing" constant="33" id="AAb-a9-8XU"/>
+                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="leading" secondItem="dro-EF-wpL" secondAttribute="leading" constant="33" id="BYt-75-JlA"/>
+                                                        <constraint firstItem="0tJ-2L-jzV" firstAttribute="leading" secondItem="dro-EF-wpL" secondAttribute="leading" constant="8" id="PPB-db-Abv"/>
+                                                        <constraint firstItem="0tJ-2L-jzV" firstAttribute="top" secondItem="9c2-bd-HYs" secondAttribute="bottom" constant="10" id="RtP-mE-RBn"/>
+                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="centerX" secondItem="dro-EF-wpL" secondAttribute="centerX" id="WKp-Hq-HxG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0tJ-2L-jzV" secondAttribute="trailing" constant="57" id="wLb-bd-3Jm"/>
+                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="top" secondItem="dro-EF-wpL" secondAttribute="top" constant="30" id="yod-nK-Net"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <color key="backgroundColor" red="0.9407788212" green="0.9407788212" blue="0.9407788212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="customSize" width="150" height="159"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WQU-cL-n7v" secondAttribute="trailing" id="53I-fk-Bx1"/>
+                                    <constraint firstItem="WQU-cL-n7v" firstAttribute="leading" secondItem="ryY-5C-Zmu" secondAttribute="leading" id="Fay-V2-9AJ"/>
+                                    <constraint firstItem="WQU-cL-n7v" firstAttribute="top" secondItem="ryY-5C-Zmu" secondAttribute="top" constant="20" id="Pqb-Eb-Pa4"/>
+                                    <constraint firstAttribute="bottom" secondItem="WQU-cL-n7v" secondAttribute="bottom" constant="20" id="Qqg-eJ-Hen"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ryY-5C-Zmu" firstAttribute="leading" secondItem="PEA-K7-9Jl" secondAttribute="leading" constant="10" id="QC9-UN-LLe"/>
+                            <constraint firstItem="ryY-5C-Zmu" firstAttribute="top" secondItem="PEA-K7-9Jl" secondAttribute="top" id="TN2-oe-Glm"/>
+                            <constraint firstItem="PEA-K7-9Jl" firstAttribute="trailing" secondItem="ryY-5C-Zmu" secondAttribute="trailing" constant="10" id="tv2-K0-F1A"/>
+                            <constraint firstItem="ryY-5C-Zmu" firstAttribute="bottom" secondItem="PEA-K7-9Jl" secondAttribute="bottom" id="uSr-bd-CBz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PEA-K7-9Jl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calculations" id="M4Q-rA-gdw"/>
@@ -115,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vM-SK-tiW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="2040"/>
+            <point key="canvasLocation" x="844.92753623188412" y="2039.7321428571427"/>
         </scene>
         <!--Compound Savings VC-->
         <scene sceneID="1Cd-ej-3uI">
@@ -169,7 +236,7 @@
         <scene sceneID="Qcq-aI-cFa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5py-fb-gUj" userLabel="Calculations NC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Ez-hI-R0i"/>
+                    <tabBarItem key="tabBarItem" title="Calculations" image="icon_calculator" id="5Ez-hI-R0i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b2C-EY-eOl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -188,7 +255,7 @@
         <scene sceneID="tUY-ay-8JO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KPd-7s-9xx" userLabel="History NC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uyG-QE-TSU"/>
+                    <tabBarItem key="tabBarItem" title="History" image="icon_history" id="uyG-QE-TSU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrP-Se-PB3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -207,7 +274,7 @@
         <scene sceneID="Po9-I2-ZEC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2kj-93-0lM" userLabel="Help NC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Gg8-l5-WDB"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="icon_support" id="Gg8-l5-WDB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dwq-el-NuF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -223,4 +290,9 @@
             <point key="canvasLocation" x="4348" y="1213"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_calculator" width="25" height="25"/>
+        <image name="icon_history" width="25" height="25"/>
+        <image name="icon_support" width="25" height="25"/>
+    </resources>
 </document>
