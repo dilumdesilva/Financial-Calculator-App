@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		4E14947123F476B000E84126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14947023F476B000E84126 /* AppDelegate.swift */; };
 		4E14947323F476B000E84126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14947223F476B000E84126 /* SceneDelegate.swift */; };
-		4E14947523F476B000E84126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14947423F476B000E84126 /* ViewController.swift */; };
 		4E14947823F476B000E84126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E14947623F476B000E84126 /* Main.storyboard */; };
 		4E14947B23F476B000E84126 /* FinanceCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E14947923F476B000E84126 /* FinanceCalculator.xcdatamodeld */; };
 		4E14947D23F476B600E84126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E14947C23F476B600E84126 /* Assets.xcassets */; };
 		4E14948023F476B600E84126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E14947E23F476B600E84126 /* LaunchScreen.storyboard */; };
 		4E14948B23F476B600E84126 /* FinanceCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14948A23F476B600E84126 /* FinanceCalculatorTests.swift */; };
 		4E14949623F476B600E84126 /* FinanceCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14949523F476B600E84126 /* FinanceCalculatorUITests.swift */; };
+		4E753CC324083D5F00A20462 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC224083D5F00A20462 /* TabBarController.swift */; };
+		4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC424083FBB00A20462 /* CalculationsViewController.swift */; };
+		4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC624083FD800A20462 /* HistoryViewController.swift */; };
+		4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC824083FFA00A20462 /* HelpViewController.swift */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -41,7 +44,6 @@
 		4E14946D23F476B000E84126 /* Finance Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E14947023F476B000E84126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E14947223F476B000E84126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4E14947423F476B000E84126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E14947723F476B000E84126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E14947A23F476B000E84126 /* FinanceCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceCalculator.xcdatamodel; sourceTree = "<group>"; };
 		4E14947C23F476B600E84126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,10 @@
 		4E14949123F476B600E84126 /* FinanceCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E14949523F476B600E84126 /* FinanceCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCalculatorUITests.swift; sourceTree = "<group>"; };
 		4E14949723F476B600E84126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E753CC224083D5F00A20462 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4E753CC424083FBB00A20462 /* CalculationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsViewController.swift; sourceTree = "<group>"; };
+		4E753CC624083FD800A20462 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		4E753CC824083FFA00A20462 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,7 +193,10 @@
 		4E1494A923F4B66A00E84126 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4E14947423F476B000E84126 /* ViewController.swift */,
+				4E753CC224083D5F00A20462 /* TabBarController.swift */,
+				4E753CC424083FBB00A20462 /* CalculationsViewController.swift */,
+				4E753CC624083FD800A20462 /* HistoryViewController.swift */,
+				4E753CC824083FFA00A20462 /* HelpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,8 +344,11 @@
 			files = (
 				4E14947B23F476B000E84126 /* FinanceCalculator.xcdatamodeld in Sources */,
 				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
-				4E14947523F476B000E84126 /* ViewController.swift in Sources */,
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
+				4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */,
+				4E753CC324083D5F00A20462 /* TabBarController.swift in Sources */,
+				4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */,
+				4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */,
 				4E14947323F476B000E84126 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

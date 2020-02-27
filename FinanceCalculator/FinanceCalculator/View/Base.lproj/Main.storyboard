@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="j0x-qq-Zr1">
             <objects>
-                <tabBarController id="8wJ-Ih-t5i" sceneMemberID="viewController">
+                <tabBarController id="8wJ-Ih-t5i" customClass="TabBarController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7KR-is-Wdf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
