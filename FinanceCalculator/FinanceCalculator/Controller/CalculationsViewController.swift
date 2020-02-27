@@ -6,4 +6,10 @@
 //  Copyright © 2020 Dilum De Silva. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CalculationsViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

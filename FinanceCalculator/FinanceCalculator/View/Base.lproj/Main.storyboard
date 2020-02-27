@@ -32,7 +32,7 @@
         <!--History VC-->
         <scene sceneID="DPh-2E-HBM">
             <objects>
-                <viewController id="VOk-9C-mPf" userLabel="History VC" sceneMemberID="viewController">
+                <viewController id="VOk-9C-mPf" userLabel="History VC" customClass="HistoryViewController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tWo-H2-RSO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Help VC -->
         <scene sceneID="nhJ-lh-wog">
             <objects>
-                <viewController id="S0r-iB-4v5" userLabel="Help VC " sceneMemberID="viewController">
+                <viewController id="S0r-iB-4v5" userLabel="Help VC " customClass="HelpViewController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zru-QU-mIH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
         <!--Calculations VC-->
         <scene sceneID="3jy-nG-oQg">
             <objects>
-                <viewController title="Calculations" id="JG8-hi-vdR" userLabel="Calculations VC" sceneMemberID="viewController">
+                <viewController title="Calculations" id="JG8-hi-vdR" userLabel="Calculations VC" customClass="CalculationsViewController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ouy-Hg-ejc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
