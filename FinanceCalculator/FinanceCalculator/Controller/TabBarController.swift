@@ -19,7 +19,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if viewController is UINavigationController{
-            print("")
-        } else if viewController is 
+            print("Current app view: Calculations Tab")
+        } else if viewController is HistoryViewController{
+            print("Current app view: History Tab")
+        } else if viewController is HelpViewController{
+            print("Current app view: Help Tab")
+        }
     }
 }
