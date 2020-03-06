@@ -19,6 +19,11 @@
 		4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC424083FBB00A20462 /* CalculationsViewController.swift */; };
 		4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC624083FD800A20462 /* HistoryViewController.swift */; };
 		4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E753CC824083FFA00A20462 /* HelpViewController.swift */; };
+		4E88B5462412C0190045E919 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5452412C0190045E919 /* Calculation.swift */; };
+		4E88B5482412C07D0045E919 /* CalculationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5472412C07D0045E919 /* CalculationViewCell.swift */; };
+		4E88B54A2412DE610045E919 /* CompoundInterestSavings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5492412DE610045E919 /* CompoundInterestSavings.swift */; };
+		4E88B54C2412DE820045E919 /* Loans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B54B2412DE820045E919 /* Loans.swift */; };
+		4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B54D2412DE960045E919 /* Mortgage.swift */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -59,6 +64,11 @@
 		4E753CC424083FBB00A20462 /* CalculationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsViewController.swift; sourceTree = "<group>"; };
 		4E753CC624083FD800A20462 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4E753CC824083FFA00A20462 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		4E88B5452412C0190045E919 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		4E88B5472412C07D0045E919 /* CalculationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewCell.swift; sourceTree = "<group>"; };
+		4E88B5492412DE610045E919 /* CompoundInterestSavings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestSavings.swift; sourceTree = "<group>"; };
+		4E88B54B2412DE820045E919 /* Loans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loans.swift; sourceTree = "<group>"; };
+		4E88B54D2412DE960045E919 /* Mortgage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mortgage.swift; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +156,7 @@
 		4E1494A323F4B5CE00E84126 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4E1494A523F4B61E00E84126 /* Conversions */,
+				4E1494A523F4B61E00E84126 /* Calculations */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -159,11 +169,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4E1494A523F4B61E00E84126 /* Conversions */ = {
+		4E1494A523F4B61E00E84126 /* Calculations */ = {
 			isa = PBXGroup;
 			children = (
+				4E88B5492412DE610045E919 /* CompoundInterestSavings.swift */,
+				4E88B54B2412DE820045E919 /* Loans.swift */,
+				4E88B54D2412DE960045E919 /* Mortgage.swift */,
 			);
-			path = Conversions;
+			path = Calculations;
 			sourceTree = "<group>";
 		};
 		4E1494A623F4B63000E84126 /* Extensions */ = {
@@ -176,6 +189,8 @@
 		4E1494A723F4B63C00E84126 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E88B5452412C0190045E919 /* Calculation.swift */,
+				4E88B5472412C07D0045E919 /* CalculationViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,9 +358,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E14947B23F476B000E84126 /* FinanceCalculator.xcdatamodeld in Sources */,
+				4E88B5462412C0190045E919 /* Calculation.swift in Sources */,
+				4E88B5482412C07D0045E919 /* CalculationViewCell.swift in Sources */,
+				4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */,
 				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
+				4E88B54A2412DE610045E919 /* CompoundInterestSavings.swift in Sources */,
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
 				4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */,
+				4E88B54C2412DE820045E919 /* Loans.swift in Sources */,
 				4E753CC324083D5F00A20462 /* TabBarController.swift in Sources */,
 				4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */,
 				4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */,

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8wJ-Ih-t5i">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -110,57 +109,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryY-5C-Zmu">
                                 <rect key="frame" x="10" y="88" width="394" height="725"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WQU-cL-n7v">
-                                        <rect key="frame" x="0.0" y="20" width="394" height="685"/>
-                                        <color key="backgroundColor" red="0.59996356870000001" green="0.12294519869999999" blue="0.0" alpha="0.99086707750000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R2H-sH-0vY">
-                                            <size key="itemSize" width="150" height="159"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-Fy-pwM">
+                                        <rect key="frame" x="8" y="8" width="378" height="709"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GjJ-fE-KGZ">
+                                            <size key="itemSize" width="160" height="160"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jqL-3p-HDA">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="159"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="6jP-hd-ut9" customClass="CalculationViewCell" customModule="Finance_Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="20" width="160" height="160"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dro-EF-wpL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="159"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-bd-HYs">
-                                                            <rect key="frame" x="33" y="30" width="84" height="74"/>
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-uY-ihC" userLabel="ImgV_Calculation Icon">
+                                                            <rect key="frame" x="40" y="20" width="80" height="77"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calculation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tJ-2L-jzV">
-                                                            <rect key="frame" x="8" y="114" width="134" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Calculation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jB-SD-TAp" userLabel="Lbl_CalculationName">
+                                                            <rect key="frame" x="20" y="115" width="120" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="0tJ-2L-jzV" secondAttribute="bottom" constant="24" id="34b-0Y-EDm"/>
-                                                        <constraint firstAttribute="trailing" secondItem="9c2-bd-HYs" secondAttribute="trailing" constant="33" id="AAb-a9-8XU"/>
-                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="leading" secondItem="dro-EF-wpL" secondAttribute="leading" constant="33" id="BYt-75-JlA"/>
-                                                        <constraint firstItem="0tJ-2L-jzV" firstAttribute="leading" secondItem="dro-EF-wpL" secondAttribute="leading" constant="8" id="PPB-db-Abv"/>
-                                                        <constraint firstItem="0tJ-2L-jzV" firstAttribute="top" secondItem="9c2-bd-HYs" secondAttribute="bottom" constant="10" id="RtP-mE-RBn"/>
-                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="centerX" secondItem="dro-EF-wpL" secondAttribute="centerX" id="WKp-Hq-HxG"/>
-                                                        <constraint firstAttribute="trailing" secondItem="0tJ-2L-jzV" secondAttribute="trailing" constant="57" id="wLb-bd-3Jm"/>
-                                                        <constraint firstItem="9c2-bd-HYs" firstAttribute="top" secondItem="dro-EF-wpL" secondAttribute="top" constant="30" id="yod-nK-Net"/>
-                                                    </constraints>
-                                                </collectionViewCellContentView>
-                                                <color key="backgroundColor" red="0.9407788212" green="0.9407788212" blue="0.9407788212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <size key="customSize" width="150" height="159"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="lp4-uY-ihC" firstAttribute="top" secondItem="6jP-hd-ut9" secondAttribute="topMargin" constant="12" id="81N-76-6th"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lp4-uY-ihC" secondAttribute="bottom" constant="63" id="CRp-3g-aIT"/>
+                                                    <constraint firstItem="lp4-uY-ihC" firstAttribute="centerX" secondItem="6jP-hd-ut9" secondAttribute="centerX" id="FyL-eS-H6S"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="5jB-SD-TAp" secondAttribute="bottom" constant="16" id="Nr8-uQ-AUd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5jB-SD-TAp" secondAttribute="trailing" constant="20" id="gPy-vO-QTW"/>
+                                                    <constraint firstItem="5jB-SD-TAp" firstAttribute="leading" secondItem="6jP-hd-ut9" secondAttribute="leading" constant="20" id="h7A-9P-W1m"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="ImgViewCalculationIcon" destination="lp4-uY-ihC" id="9U3-iN-Gfm"/>
+                                                    <outlet property="LblCalculationName" destination="5jB-SD-TAp" id="rFd-Ic-QIR"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="WQU-cL-n7v" secondAttribute="trailing" id="53I-fk-Bx1"/>
-                                    <constraint firstItem="WQU-cL-n7v" firstAttribute="leading" secondItem="ryY-5C-Zmu" secondAttribute="leading" id="Fay-V2-9AJ"/>
-                                    <constraint firstItem="WQU-cL-n7v" firstAttribute="top" secondItem="ryY-5C-Zmu" secondAttribute="top" constant="20" id="Pqb-Eb-Pa4"/>
-                                    <constraint firstAttribute="bottom" secondItem="WQU-cL-n7v" secondAttribute="bottom" constant="20" id="Qqg-eJ-Hen"/>
+                                    <constraint firstItem="hVf-Fy-pwM" firstAttribute="leading" secondItem="ryY-5C-Zmu" secondAttribute="leading" constant="8" id="2I3-Y6-Ydn"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVf-Fy-pwM" secondAttribute="bottom" constant="8" id="O5b-ox-wS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVf-Fy-pwM" secondAttribute="trailing" constant="8" id="gV6-QD-l1c"/>
+                                    <constraint firstItem="hVf-Fy-pwM" firstAttribute="top" secondItem="ryY-5C-Zmu" secondAttribute="top" constant="8" id="hBH-QL-b5f"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -175,9 +173,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Calculations" id="M4Q-rA-gdw"/>
                     <connections>
-                        <segue destination="cRH-z4-1DB" kind="show" id="WMf-Sy-YVZ"/>
-                        <segue destination="GYa-Lp-4td" kind="show" id="nP2-7v-1op"/>
-                        <segue destination="l2G-8H-V6Z" kind="show" id="tGZ-Q2-dvS"/>
+                        <segue destination="cRH-z4-1DB" kind="show" identifier="goToSavingsCalculation" id="WMf-Sy-YVZ"/>
+                        <segue destination="GYa-Lp-4td" kind="show" identifier="goToMortgageCalculation" id="nP2-7v-1op"/>
+                        <segue destination="l2G-8H-V6Z" kind="show" identifier="goToLoansCalculation" id="tGZ-Q2-dvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vM-SK-tiW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
