@@ -45,7 +45,7 @@ class CalculationsViewController: UIViewController, UICollectionViewDataSource, 
         cell.ImgViewCalculationIcon.image = calculations[indexPath.row].getCalculationIcon()
         cell.LblCalculationName.text = calculations[indexPath.row].getCalculationName()
         
-        ///
+        /// Initializing cell styles 
         
         return cell
     }
