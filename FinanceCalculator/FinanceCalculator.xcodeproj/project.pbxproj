@@ -24,6 +24,8 @@
 		4E88B54A2412DE610045E919 /* CompoundInterestSavings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5492412DE610045E919 /* CompoundInterestSavings.swift */; };
 		4E88B54C2412DE820045E919 /* Loans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B54B2412DE820045E919 /* Loans.swift */; };
 		4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B54D2412DE960045E919 /* Mortgage.swift */; };
+		4E88B55424143EED0045E919 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55224143EED0045E919 /* CardCell.swift */; };
+		4E88B55524143EED0045E919 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E88B55324143EED0045E919 /* CardCell.xib */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		4E88B5492412DE610045E919 /* CompoundInterestSavings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundInterestSavings.swift; sourceTree = "<group>"; };
 		4E88B54B2412DE820045E919 /* Loans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loans.swift; sourceTree = "<group>"; };
 		4E88B54D2412DE960045E919 /* Mortgage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mortgage.swift; sourceTree = "<group>"; };
+		4E88B55224143EED0045E919 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		4E88B55324143EED0045E919 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +202,7 @@
 		4E1494A823F4B65C00E84126 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E88B54F24143E630045E919 /* CardCell */,
 				4EAD2E2523F5F61400E99281 /* CustomKeyboard */,
 				4E14947E23F476B600E84126 /* LaunchScreen.storyboard */,
 				4E14947623F476B000E84126 /* Main.storyboard */,
@@ -214,6 +219,15 @@
 				4E753CC824083FFA00A20462 /* HelpViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4E88B54F24143E630045E919 /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E88B55224143EED0045E919 /* CardCell.swift */,
+				4E88B55324143EED0045E919 /* CardCell.xib */,
+			);
+			path = CardCell;
 			sourceTree = "<group>";
 		};
 		4EAD2E2523F5F61400E99281 /* CustomKeyboard */ = {
@@ -331,6 +345,7 @@
 			files = (
 				4E14948023F476B600E84126 /* LaunchScreen.storyboard in Resources */,
 				4E14947D23F476B600E84126 /* Assets.xcassets in Resources */,
+				4E88B55524143EED0045E919 /* CardCell.xib in Resources */,
 				4E14947823F476B000E84126 /* Main.storyboard in Resources */,
 				4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */,
 			);
@@ -364,6 +379,7 @@
 				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
 				4E88B54A2412DE610045E919 /* CompoundInterestSavings.swift in Sources */,
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
+				4E88B55424143EED0045E919 /* CardCell.swift in Sources */,
 				4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */,
 				4E88B54C2412DE820045E919 /* Loans.swift in Sources */,
 				4E753CC324083D5F00A20462 /* TabBarController.swift in Sources */,

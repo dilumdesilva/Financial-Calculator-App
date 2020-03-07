@@ -10,7 +10,4 @@ import UIKit
 
 class CalculationViewCell: UICollectionViewCell{
     
-    //IBoutlets of related to the calculation view cell
-    @IBOutlet weak var ImgViewCalculationIcon: UIImageView!
-    @IBOutlet weak var LblCalculationName: UILabel!
 }
