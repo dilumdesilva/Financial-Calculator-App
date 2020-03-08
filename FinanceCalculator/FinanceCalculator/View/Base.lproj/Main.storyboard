@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="IHO-Nc-Ndj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Histoty" id="RyB-rX-jYZ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="a8R-5S-YvW"/>
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="a8R-5S-YvW"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcA-Xx-uB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,25 +112,25 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-OA-Yt1">
                                         <rect key="frame" x="8" y="8" width="378" height="709"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hAR-7R-yMW">
-                                            <size key="itemSize" width="50" height="50"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hAR-7R-yMW">
+                                            <size key="itemSize" width="250" height="250"/>
+                                            <size key="estimatedItemSize" width="160" height="160"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dwI-ya-mgz">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="64" y="20" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tQW-0F-5tt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
+                                                </view>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="bVE-OA-Yt1" secondAttribute="bottom" constant="8" id="3v8-TZ-8em"/>
                                     <constraint firstItem="bVE-OA-Yt1" firstAttribute="leading" secondItem="ryY-5C-Zmu" secondAttribute="leading" constant="8" id="7DD-v1-ujI"/>
@@ -168,14 +167,55 @@
                     <view key="view" contentMode="scaleToFill" id="igG-So-bNf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-Aq-Q8S">
+                                <rect key="frame" x="0.0" y="88" width="414" height="695"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-Vg-8pX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aLL-BW-TB7">
+                                                <rect key="frame" x="8" y="8" width="398" height="679"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aLL-BW-TB7" secondAttribute="trailing" constant="8" id="863-8B-ehm"/>
+                                            <constraint firstItem="aLL-BW-TB7" firstAttribute="top" secondItem="PUk-Vg-8pX" secondAttribute="top" constant="8" id="JfW-A8-DPE"/>
+                                            <constraint firstItem="aLL-BW-TB7" firstAttribute="leading" secondItem="PUk-Vg-8pX" secondAttribute="leading" constant="8" id="Q9t-Yh-jbJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="aLL-BW-TB7" secondAttribute="bottom" constant="8" id="WVM-Yb-umO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="leading" secondItem="fVn-Aq-Q8S" secondAttribute="leading" id="8l5-S2-ucr"/>
+                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="top" secondItem="fVn-Aq-Q8S" secondAttribute="top" id="GzG-ir-oxm"/>
+                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="width" secondItem="fVn-Aq-Q8S" secondAttribute="width" id="M2b-Bt-iS9"/>
+                                    <constraint firstAttribute="trailing" secondItem="PUk-Vg-8pX" secondAttribute="trailing" id="N8E-9O-7VJ"/>
+                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="height" secondItem="fVn-Aq-Q8S" secondAttribute="height" priority="250" id="XgR-A8-Daf"/>
+                                    <constraint firstAttribute="bottom" secondItem="PUk-Vg-8pX" secondAttribute="bottom" id="eFn-zd-Hv9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="leading" secondItem="R9S-Bi-JTS" secondAttribute="leading" id="kYm-l4-Dsa"/>
+                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="top" secondItem="R9S-Bi-JTS" secondAttribute="top" id="rPp-52-ZoB"/>
+                            <constraint firstItem="R9S-Bi-JTS" firstAttribute="bottom" secondItem="fVn-Aq-Q8S" secondAttribute="bottom" constant="30" id="sLF-i6-oAd"/>
+                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="trailing" secondItem="R9S-Bi-JTS" secondAttribute="trailing" id="yXa-83-ktf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R9S-Bi-JTS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Compound Savings" id="Cyd-yn-TJ1"/>
+                    <navigationItem key="navigationItem" title="Compound Savings" id="Cyd-yn-TJ1">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_save" id="ofT-ib-Dzc"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="zs8-7T-2yl"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9K-9B-g3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="2867"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="2866.7410714285711"/>
         </scene>
         <!--Mortgage VC-->
         <scene sceneID="9mG-vs-NTM">
@@ -184,14 +224,120 @@
                     <view key="view" contentMode="scaleToFill" id="OqZ-hW-BEz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhx-av-98w">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3P5-bG-JO8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="bottomRight" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ODv-So-6sw" userLabel="Outer Stack View">
+                                                <rect key="frame" x="15" y="15" width="384" height="322.33333333333331"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MmY-m4-Loe" userLabel="M Loan Amount TF Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="69.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Loan Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMx-eP-3h9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hah-6Q-dmU">
+                                                                <rect key="frame" x="0.0" y="35.333333333333343" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-u2-QHX" userLabel="M Interest TF Stack View">
+                                                        <rect key="frame" x="0.0" y="84.333333333333343" width="384" height="69.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6Z-IM-H8q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-Ox-huU">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GWG-mM-KC1" userLabel="M Payment TF Stack View">
+                                                        <rect key="frame" x="0.0" y="168.66666666666669" width="384" height="69.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nu-RB-fnR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-Vr-Htp">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-YF-Lrb" userLabel="M NoY TF Stack View">
+                                                        <rect key="frame" x="0.0" y="253.00000000000003" width="384" height="69.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Number of Years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-bN-48w">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBN-u4-SvP">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ODv-So-6sw" firstAttribute="top" secondItem="3P5-bG-JO8" secondAttribute="top" constant="15" id="jCA-em-IrR"/>
+                                            <constraint firstAttribute="trailing" secondItem="ODv-So-6sw" secondAttribute="trailing" constant="15" id="tag-Nm-VDq"/>
+                                            <constraint firstItem="ODv-So-6sw" firstAttribute="leading" secondItem="3P5-bG-JO8" secondAttribute="leading" constant="15" id="wRI-GC-OQL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3P5-bG-JO8" firstAttribute="height" secondItem="Qhx-av-98w" secondAttribute="height" priority="250" id="CN3-Dz-zhH"/>
+                                    <constraint firstItem="3P5-bG-JO8" firstAttribute="top" secondItem="Qhx-av-98w" secondAttribute="top" id="RGd-xU-h6z"/>
+                                    <constraint firstItem="3P5-bG-JO8" firstAttribute="width" secondItem="Qhx-av-98w" secondAttribute="width" id="ZWs-bE-jiN"/>
+                                    <constraint firstAttribute="trailing" secondItem="3P5-bG-JO8" secondAttribute="trailing" id="bhC-0N-XeC"/>
+                                    <constraint firstAttribute="bottom" secondItem="3P5-bG-JO8" secondAttribute="bottom" id="gjf-Uw-flr"/>
+                                    <constraint firstItem="3P5-bG-JO8" firstAttribute="leading" secondItem="Qhx-av-98w" secondAttribute="leading" id="mI1-qb-ol5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Qw-NJ-iHo" firstAttribute="bottom" secondItem="Qhx-av-98w" secondAttribute="bottom" id="6vE-BJ-RYG"/>
+                            <constraint firstItem="6Qw-NJ-iHo" firstAttribute="trailing" secondItem="Qhx-av-98w" secondAttribute="trailing" id="Tcb-GV-CC5"/>
+                            <constraint firstItem="Qhx-av-98w" firstAttribute="top" secondItem="6Qw-NJ-iHo" secondAttribute="top" id="aEL-nO-JDx"/>
+                            <constraint firstItem="Qhx-av-98w" firstAttribute="leading" secondItem="6Qw-NJ-iHo" secondAttribute="leading" id="xgz-a5-njZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Qw-NJ-iHo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mortgage" id="o8b-A0-JiC"/>
+                    <navigationItem key="navigationItem" title="Mortgage" id="o8b-A0-JiC">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_save" id="xNc-J4-MF9"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="UT7-ck-49H"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuC-KQ-HeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="2867"/>
+            <point key="canvasLocation" x="844.92753623188412" y="2866.7410714285711"/>
         </scene>
         <!--Loans VC-->
         <scene sceneID="BXQ-QM-3Tt">
@@ -200,14 +346,122 @@
                     <view key="view" contentMode="scaleToFill" id="s2e-gG-lVU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB8-2v-oVc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7e-5q-tiE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="bottomRight" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mw2-iC-tpy" userLabel="Outer Stack View">
+                                                <rect key="frame" x="15" y="15" width="384" height="322.33333333333331"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-K0-2hx" userLabel="Loan Amount TF Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="69.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTG-Wv-gA0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-Rp-PF6">
+                                                                <rect key="frame" x="0.0" y="35.333333333333343" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZjH-ps-h0U" userLabel="Interest TF Stack View">
+                                                        <rect key="frame" x="0.0" y="84.333333333333343" width="384" height="69.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh8-is-siV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bM-jB-7gq">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="keD-75-92B" userLabel="Payment TF Stack View">
+                                                        <rect key="frame" x="0.0" y="168.66666666666669" width="384" height="69.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFN-p7-Ubm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="he0-64-DoW">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-yC-2IV" userLabel="Number of Payment TF Stack View">
+                                                        <rect key="frame" x="0.0" y="253.00000000000003" width="384" height="69.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Payments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtY-IZ-j5G">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1jd-SI-ObL">
+                                                                <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="mw2-iC-tpy" secondAttribute="trailing" constant="15" id="1vl-nL-qT8"/>
+                                            <constraint firstItem="mw2-iC-tpy" firstAttribute="top" secondItem="b7e-5q-tiE" secondAttribute="top" constant="15" id="VW0-rs-v6F"/>
+                                            <constraint firstItem="mw2-iC-tpy" firstAttribute="leading" secondItem="b7e-5q-tiE" secondAttribute="leading" constant="15" id="wZB-hO-HzQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="b7e-5q-tiE" firstAttribute="height" secondItem="MB8-2v-oVc" secondAttribute="height" id="3Kc-09-bLy"/>
+                                    <constraint firstItem="b7e-5q-tiE" firstAttribute="width" secondItem="MB8-2v-oVc" secondAttribute="width" id="YZ9-zB-Pqg"/>
+                                    <constraint firstAttribute="trailing" secondItem="b7e-5q-tiE" secondAttribute="trailing" id="YeA-6V-IFl"/>
+                                    <constraint firstItem="b7e-5q-tiE" firstAttribute="top" secondItem="MB8-2v-oVc" secondAttribute="top" id="ZT1-0H-jbG"/>
+                                    <constraint firstItem="b7e-5q-tiE" firstAttribute="leading" secondItem="MB8-2v-oVc" secondAttribute="leading" id="wTK-oB-Q7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="b7e-5q-tiE" secondAttribute="bottom" id="yEE-Db-CQR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MB8-2v-oVc" firstAttribute="height" secondItem="s2e-gG-lVU" secondAttribute="height" multiplier="0.809152" priority="250" id="2ZF-k0-67N"/>
+                            <constraint firstItem="DoZ-PW-qYq" firstAttribute="bottom" secondItem="MB8-2v-oVc" secondAttribute="bottom" id="DKQ-1K-EvN"/>
+                            <constraint firstItem="MB8-2v-oVc" firstAttribute="top" secondItem="DoZ-PW-qYq" secondAttribute="top" id="Okf-u0-Glj"/>
+                            <constraint firstItem="MB8-2v-oVc" firstAttribute="width" secondItem="s2e-gG-lVU" secondAttribute="width" id="Ysw-15-PjU"/>
+                            <constraint firstItem="DoZ-PW-qYq" firstAttribute="trailing" secondItem="MB8-2v-oVc" secondAttribute="trailing" id="buB-Jo-I2B"/>
+                            <constraint firstItem="MB8-2v-oVc" firstAttribute="leading" secondItem="DoZ-PW-qYq" secondAttribute="leading" id="lg2-b6-GAB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DoZ-PW-qYq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Loans" id="VsX-I1-BgA"/>
+                    <navigationItem key="navigationItem" title="Loans" id="VsX-I1-BgA">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_save" id="Oa7-K2-xBt"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="SN4-5Z-MoL"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6d-pc-wIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="2867"/>
+            <point key="canvasLocation" x="1779.7101449275365" y="2866.7410714285711"/>
         </scene>
         <!--Calculations NC-->
         <scene sceneID="Qcq-aI-cFa">
@@ -268,8 +522,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="icon_calculator" width="25" height="25"/>
         <image name="icon_history" width="25" height="25"/>
+        <image name="icon_save" width="25" height="25"/>
         <image name="icon_support" width="25" height="25"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>
