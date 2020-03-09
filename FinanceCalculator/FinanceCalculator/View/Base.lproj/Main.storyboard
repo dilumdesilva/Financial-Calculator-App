@@ -220,7 +220,7 @@
         <!--Mortgage VC-->
         <scene sceneID="9mG-vs-NTM">
             <objects>
-                <viewController id="GYa-Lp-4td" userLabel="Mortgage VC" sceneMemberID="viewController">
+                <viewController id="GYa-Lp-4td" userLabel="Mortgage VC" customClass="MortgageViewController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OqZ-hW-BEz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,9 +331,26 @@
                     <navigationItem key="navigationItem" title="Mortgage" id="o8b-A0-JiC">
                         <rightBarButtonItems>
                             <barButtonItem image="icon_save" id="xNc-J4-MF9"/>
-                            <barButtonItem image="arrow.clockwise" catalog="system" id="UT7-ck-49H"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="UT7-ck-49H">
+                                <connections>
+                                    <action selector="resetMortageView:" destination="GYa-Lp-4td" id="aMk-wY-abq"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="interestTextField" destination="bwy-Ox-huU" id="LA1-d2-Crk"/>
+                        <outlet property="loanAmountTextField" destination="hah-6Q-dmU" id="VwB-ac-Q5K"/>
+                        <outlet property="mortgageInterestTFStackView" destination="jUQ-u2-QHX" id="F4x-fY-8gR"/>
+                        <outlet property="mortgageLoanAmountTFStackView" destination="MmY-m4-Loe" id="9NF-oP-rfE"/>
+                        <outlet property="mortgageNoYearsTFStackView" destination="Fb1-YF-Lrb" id="Kiy-oO-Pto"/>
+                        <outlet property="mortgagePaymentTFStackView" destination="GWG-mM-KC1" id="qAr-qi-dyp"/>
+                        <outlet property="numberOfYearsTextField" destination="rBN-u4-SvP" id="5Xw-hn-nyk"/>
+                        <outlet property="outerStackView" destination="ODv-So-6sw" id="sXD-TF-mXU"/>
+                        <outlet property="outerStackViewTopConstaint" destination="jCA-em-IrR" id="idw-w2-tmx"/>
+                        <outlet property="paymentTextField" destination="0uk-Vr-Htp" id="UX6-Ws-vzB"/>
+                        <outlet property="viewScroller" destination="Qhx-av-98w" id="bGn-3F-Zug"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuC-KQ-HeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

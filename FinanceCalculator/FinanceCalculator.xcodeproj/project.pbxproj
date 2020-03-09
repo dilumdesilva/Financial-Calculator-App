@@ -26,6 +26,10 @@
 		4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B54D2412DE960045E919 /* Mortgage.swift */; };
 		4E88B55424143EED0045E919 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55224143EED0045E919 /* CardCell.swift */; };
 		4E88B55524143EED0045E919 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E88B55324143EED0045E919 /* CardCell.xib */; };
+		4E88B55724161F260045E919 /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55624161F260045E919 /* MortgageViewController.swift */; };
+		4E88B559241633180045E919 /* UITextField+PlaceHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */; };
+		4E88B55B241636150045E919 /* UITextField+CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */; };
+		4E88B55D241636310045E919 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,10 @@
 		4E88B54D2412DE960045E919 /* Mortgage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mortgage.swift; sourceTree = "<group>"; };
 		4E88B55224143EED0045E919 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		4E88B55324143EED0045E919 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		4E88B55624161F260045E919 /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
+		4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceHolderColor.swift"; sourceTree = "<group>"; };
+		4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+CustomKeyboard.swift"; sourceTree = "<group>"; };
+		4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +194,9 @@
 		4E1494A623F4B63000E84126 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */,
+				4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */,
+				4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 				4E753CC424083FBB00A20462 /* CalculationsViewController.swift */,
 				4E753CC624083FD800A20462 /* HistoryViewController.swift */,
 				4E753CC824083FFA00A20462 /* HelpViewController.swift */,
+				4E88B55624161F260045E919 /* MortgageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -381,11 +393,15 @@
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
 				4E88B55424143EED0045E919 /* CardCell.swift in Sources */,
 				4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */,
+				4E88B55D241636310045E919 /* UIViewController+HideKeyboard.swift in Sources */,
+				4E88B559241633180045E919 /* UITextField+PlaceHolderColor.swift in Sources */,
 				4E88B54C2412DE820045E919 /* Loans.swift in Sources */,
 				4E753CC324083D5F00A20462 /* TabBarController.swift in Sources */,
 				4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */,
 				4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */,
 				4E14947323F476B000E84126 /* SceneDelegate.swift in Sources */,
+				4E88B55724161F260045E919 /* MortgageViewController.swift in Sources */,
+				4E88B55B241636150045E919 /* UITextField+CustomKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
