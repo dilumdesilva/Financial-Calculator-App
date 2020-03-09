@@ -8,18 +8,17 @@
 
 import UIKit
 
-private var numericKeyboardDelegate: CustomKeyboardDelegate? = nil
+private var numericKeyboardDelegate: CustomKeyboardDelegate?
 
-extension UITextField: CustomKeyboardDelegate{
-    
+extension UITextField: CustomKeyboardDelegate {
     func setAsNumericKeyboard(delegate: CustomKeyboardDelegate?) {
-        let numericKeyboard = CustomKeyboard(frame: CGRect (x: 0, y: 0, width: 0, height: customKeyboardHeight))
+        let numericKeyboard = CustomKeyboard(frame: CGRect(x: 0, y: 0, width: 0, height: customKeyboardHeight))
         self.inputView = numericKeyboard
         numericKeyboardDelegate = delegate
         numericKeyboard.delegate = self
     }
     
-    func unsetAsNumericKeyboard(){
+    func unsetAsNumericKeyboard() {
         if let numericKeyboard = self.inputView as? CustomKeyboard {
             numericKeyboard.delegate = nil
         }
@@ -45,6 +44,4 @@ extension UITextField: CustomKeyboardDelegate{
     internal func hideKeyboardPressed() {
         numericKeyboardDelegate?.hideKeyboardPressed()
     }
-    
-    
 }
