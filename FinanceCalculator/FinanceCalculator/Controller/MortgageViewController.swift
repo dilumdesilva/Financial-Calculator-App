@@ -124,10 +124,16 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     
     
     @IBAction func performCalculation(_ sender: Any) {
-        if validateTexFields() >= 3 {
+        if validateTexFields() == 3 {
             showAlert(message: "can perform", title: "performCalculation")
+            
+            /// calculate Missing Component
+            calculateMissingComponent()
+            
+        }else if validateTexFields() == 4 {
+            showAlert(message: "Invalid Calculation. You must leave one field to proceed with a calculation", title: "Mortgage Calculation Warning")
         }else {
-            showAlert(message: "cant perform", title: "performCalculation")
+            showAlert(message: "Please fill at least three fields to perform a calculation", title: "Mortgage Calculation Warning")
         }
     }
     
@@ -135,21 +141,15 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     @IBAction func mortgageTextFieldDidChange(_ sender: UITextField) {
         self.btnReset.isEnabled = true
         self.btnCalculate.isEnabled = true
-//        var component: MortageCalculationComponent?
-//
-//        if sender.tag == 1 {
-//            component = MortageCalculationComponent.loanAmount
-//        } else if sender.tag == 2 {
-//            component = MortageCalculationComponent.interestRate
-//        } else if sender.tag == 3 {
-//            component = MortageCalculationComponent.payment
-//        } else if sender.tag == 4 {
-//            component = MortageCalculationComponent.numberOfYears
-//        }
     }
     
     @IBAction func resetMortageView(_ sender: Any) {
         resetTextFields()
+    }
+    
+    func calculateMissingComponent(){
+        /// Identify missing component
+        /// Perform relavant calculation
     }
     
     func validateTexFields() -> Int{
@@ -178,12 +178,10 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     /// - Warning: This function needs to be changed when a new text field is added
     ///
     func resetTextFields(){
-        if !isTextFieldEmpty(){
             loanAmountTextField.text = ""
             interestTextField.text = ""
             paymentTextField.text = ""
             numberOfYearsTextField.text = ""
-        }
     }
     
     /// Resuable function to check whether the text feilds are empty
@@ -201,19 +199,20 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     
     
     func numericKeyPressed(key: Int) {
-        print("")
+        print("Numeric key \(key) pressed!")
     }
     
     func backspacePressed() {
-        print("")
+        print("Backspace pressed!")
+        
     }
     
     func symbolPressed(symbol: String) {
-        print("")
+        print("Symbol \(symbol) pressed!")
     }
     
     func hideKeyboardPressed() {
-        print("")
+        keyboardWillHide()
     }
     
 }

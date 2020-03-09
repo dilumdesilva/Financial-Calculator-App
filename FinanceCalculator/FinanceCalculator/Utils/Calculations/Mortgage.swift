@@ -6,47 +6,12 @@
 //  Copyright © 2020 Dilum De Silva. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-enum MortageCalculationComponent{
-    case loanAmount
-    case interestRate
-    case payment
-    case numberOfYears
+extension  UIViewController{
     
-    static let getAllComponents = [loanAmount, interestRate, payment, numberOfYears]
+    func missingPrincipalAmount(){}
+    func missingInterestRate(){}
+    func missingMonthlyPayment(){}
+    func missingPaymentTerms(){}
 }
-
-
-struct Mortage {
-    let value: Double
-    let component: MortageCalculationComponent
-    
-    init(component: MortageCalculationComponent, value: Double) {
-        self.component = component
-        self.value = value
-    }
-    
-    func calculateMissingComponent(component missing: MortageCalculationComponent) -> Double{
-        var missingOutput = 0.0
-        
-        switch component {
-        case .loanAmount:
-            print("Missing")
-        case .interestRate:
-            print("Missing")
-        case .payment:
-            print("Missing")
-        case .numberOfYears:
-            print("Missing")
-        }
-        
-        missingOutput = 1.0
-        return missingOutput
-    }
-}
-
-
-  
-
-
