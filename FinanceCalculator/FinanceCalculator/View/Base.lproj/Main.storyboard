@@ -206,9 +206,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R9S-Bi-JTS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Compound Savings" id="Cyd-yn-TJ1">
+                    <navigationItem key="navigationItem" title="Savings" id="Cyd-yn-TJ1">
                         <rightBarButtonItems>
                             <barButtonItem image="icon_save" id="ofT-ib-Dzc"/>
+                            <barButtonItem image="play.fill" catalog="system" id="avK-BP-Pkb"/>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="zs8-7T-2yl"/>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -243,10 +244,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hah-6Q-dmU">
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hah-6Q-dmU">
                                                                 <rect key="frame" x="0.0" y="35.333333333333343" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingChanged" id="dFb-Zg-SP4"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -259,10 +263,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-Ox-huU">
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-Ox-huU">
                                                                 <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="cHV-Vs-Gnj"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -275,10 +282,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-Vr-Htp">
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-Vr-Htp">
                                                                 <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="g7H-1C-kze"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -291,14 +301,18 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBN-u4-SvP">
+                                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBN-u4-SvP">
                                                                 <rect key="frame" x="0.0" y="35.333333333333314" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="u99-nD-Pjt"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -309,6 +323,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="3P5-bG-JO8" firstAttribute="height" secondItem="Qhx-av-98w" secondAttribute="height" priority="250" id="CN3-Dz-zhH"/>
                                     <constraint firstItem="3P5-bG-JO8" firstAttribute="top" secondItem="Qhx-av-98w" secondAttribute="top" id="RGd-xU-h6z"/>
@@ -331,6 +346,11 @@
                     <navigationItem key="navigationItem" title="Mortgage" id="o8b-A0-JiC">
                         <rightBarButtonItems>
                             <barButtonItem image="icon_save" id="xNc-J4-MF9"/>
+                            <barButtonItem image="play.fill" catalog="system" id="i0p-Rv-imT">
+                                <connections>
+                                    <action selector="performCalculation:" destination="GYa-Lp-4td" id="J9E-Zr-HmF"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="UT7-ck-49H">
                                 <connections>
                                     <action selector="resetMortageView:" destination="GYa-Lp-4td" id="aMk-wY-abq"/>
@@ -339,6 +359,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnCalculate" destination="i0p-Rv-imT" id="qlG-Jg-FkM"/>
+                        <outlet property="btnReset" destination="UT7-ck-49H" id="wRi-Ev-l7Q"/>
+                        <outlet property="btnSave" destination="xNc-J4-MF9" id="W3d-zq-vhM"/>
                         <outlet property="interestTextField" destination="bwy-Ox-huU" id="LA1-d2-Crk"/>
                         <outlet property="loanAmountTextField" destination="hah-6Q-dmU" id="VwB-ac-Q5K"/>
                         <outlet property="mortgageInterestTFStackView" destination="jUQ-u2-QHX" id="F4x-fY-8gR"/>
@@ -472,6 +495,7 @@
                     <navigationItem key="navigationItem" title="Loans" id="VsX-I1-BgA">
                         <rightBarButtonItems>
                             <barButtonItem image="icon_save" id="Oa7-K2-xBt"/>
+                            <barButtonItem image="play.fill" catalog="system" id="rze-Cb-tTr"/>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="SN4-5Z-MoL"/>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -544,6 +568,7 @@
         <image name="icon_history" width="25" height="25"/>
         <image name="icon_save" width="25" height="25"/>
         <image name="icon_support" width="25" height="25"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>

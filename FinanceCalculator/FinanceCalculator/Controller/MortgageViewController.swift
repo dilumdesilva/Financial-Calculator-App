@@ -11,8 +11,8 @@ import UIKit
 let MORTGAGE_USER_DEFAULTS_KEY = "mortgage"
 private let MORTGAGE_USER_DEFAULTS_MAX_COUNT = 5
 
-class MortgageViewController: UIViewController {
-    
+class MortgageViewController: UIViewController, CustomKeyboardDelegate {
+
     @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var outerStackView: UIStackView!
     @IBOutlet weak var outerStackViewTopConstaint: NSLayoutConstraint!
@@ -25,10 +25,13 @@ class MortgageViewController: UIViewController {
     @IBOutlet weak var mortgageNoYearsTFStackView: UIStackView!
     @IBOutlet weak var numberOfYearsTextField: UITextField!
     
+    @IBOutlet weak var btnCalculate: UIBarButtonItem!
+    @IBOutlet weak var btnReset: UIBarButtonItem!
+    @IBOutlet weak var btnSave: UIBarButtonItem!
     
     var activeTextField = UITextField()
-    var outerStackViewTopConstraintDefaultHeight: CGFloat = 17.0
-    var textFieldToKeyBoardGap = 20
+    var outerStackViewTopConstraintDefaultHeight: CGFloat = 10.0
+    var textFieldToKeyBoardGap = 10
     var keyBoardHeight:CGFloat = 0
     
     override func viewDidLoad() {
@@ -36,8 +39,10 @@ class MortgageViewController: UIViewController {
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide)))
         
-        if isTextFieldEmpty(){
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        if validateTexFields() == 0 {
+            self.btnReset.isEnabled = false
+            self.btnCalculate.isEnabled = false
+            self.btnSave.isEnabled = false
         }
     }
     
@@ -46,6 +51,20 @@ class MortgageViewController: UIViewController {
         
         ///setting text field styles
         loanAmountTextField._darkPlaceHolderColor(UIColor.darkText)
+        loanAmountTextField.setAsNumericKeyboard(delegate: self)
+        
+        interestTextField._darkPlaceHolderColor(UIColor.darkText)
+        interestTextField.setAsNumericKeyboard(delegate: self)
+        
+        paymentTextField._darkPlaceHolderColor(UIColor.darkText)
+        paymentTextField.setAsNumericKeyboard(delegate: self)
+        
+        numberOfYearsTextField._darkPlaceHolderColor(UIColor.darkText)
+        numberOfYearsTextField.setAsNumericKeyboard(delegate: self)
+        
+        ///Obser which tracks the keyboard show event
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     /// This will function will invoked by the ui tap gesture
@@ -58,8 +77,101 @@ class MortgageViewController: UIViewController {
         })
     }
     
+    @objc func keyboardWillShow(notification: NSNotification){
+        let firstResponder = self.findFirstResponder(inView: self.view)
+        
+        if firstResponder != nil{
+            activeTextField = firstResponder as! UITextField;
+            
+            let activeTextFieldSuperView = activeTextField.superview!
+            
+            if let info = notification.userInfo{
+                let keyboard:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+                let targetY = view.frame.size.height - keyboard.height - 15 - activeTextField.frame.size.height
+                let initialY = outerStackView.frame.origin.y + activeTextFieldSuperView.frame.origin.y + activeTextField.frame.origin.y
+
+                if initialY > targetY {
+                    let diff = targetY - initialY
+                    let targetOffsetForTopConstraint = outerStackViewTopConstaint.constant + diff
+                    self.view.layoutIfNeeded()
+                    
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.outerStackViewTopConstaint.constant = targetOffsetForTopConstraint
+                        self.view.layoutIfNeeded()
+                    })
+                }
+                
+                var contentInset:UIEdgeInsets = self.viewScroller.contentInset
+                contentInset.bottom = keyboard.size.height
+                viewScroller.contentInset = contentInset
+            }
+        }
+    }
+    
+    func findFirstResponder(inView view: UIView) -> UIView? {
+        for subView in view.subviews {
+            if subView.isFirstResponder {
+                return subView
+            }
+            
+            if let recursiveSubView = self.findFirstResponder(inView: subView) {
+                return recursiveSubView
+            }
+        }
+        
+        return nil
+    }
+    
+    
+    @IBAction func performCalculation(_ sender: Any) {
+        if validateTexFields() >= 3 {
+            showAlert(message: "can perform", title: "performCalculation")
+        }else {
+            showAlert(message: "cant perform", title: "performCalculation")
+        }
+    }
+    
+    ///Function which is getting triggered once a textbox is changed
+    @IBAction func mortgageTextFieldDidChange(_ sender: UITextField) {
+        self.btnReset.isEnabled = true
+        self.btnCalculate.isEnabled = true
+//        var component: MortageCalculationComponent?
+//
+//        if sender.tag == 1 {
+//            component = MortageCalculationComponent.loanAmount
+//        } else if sender.tag == 2 {
+//            component = MortageCalculationComponent.interestRate
+//        } else if sender.tag == 3 {
+//            component = MortageCalculationComponent.payment
+//        } else if sender.tag == 4 {
+//            component = MortageCalculationComponent.numberOfYears
+//        }
+    }
+    
     @IBAction func resetMortageView(_ sender: Any) {
         resetTextFields()
+    }
+    
+    func validateTexFields() -> Int{
+        var counter = 0
+        if !(loanAmountTextField.text?.isEmpty)! {
+            counter += 1
+        }
+        if !(interestTextField.text?.isEmpty)! {
+            counter += 1
+        }
+        if !(paymentTextField.text?.isEmpty)! {
+            counter += 1
+        }
+        if !(numberOfYearsTextField.text?.isEmpty)! {
+            counter += 1
+        }
+        
+        return counter
+    }
+    
+    func updateTextFeilds(){
+        
     }
     
     /// Resetting the text feilds
@@ -87,24 +199,21 @@ class MortgageViewController: UIViewController {
         return true
     }
     
+    
+    func numericKeyPressed(key: Int) {
+        print("")
+    }
+    
+    func backspacePressed() {
+        print("")
+    }
+    
+    func symbolPressed(symbol: String) {
+        print("")
+    }
+    
+    func hideKeyboardPressed() {
+        print("")
+    }
+    
 }
-
-//extension MortgageViewController: CustomKeyboardDelegate{
-//    func numericKeyPressed(key: Int) {
-//        <#code#>
-//    }
-//
-//    func backspacePressed() {
-//        <#code#>
-//    }
-//
-//    func symbolPressed(symbol: String) {
-//        <#code#>
-//    }
-//
-//    func hideKeyboardPressed() {
-//        <#code#>
-//    }
-//
-//
-//}

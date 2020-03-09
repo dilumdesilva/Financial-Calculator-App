@@ -30,6 +30,7 @@
 		4E88B559241633180045E919 /* UITextField+PlaceHolderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */; };
 		4E88B55B241636150045E919 /* UITextField+CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */; };
 		4E88B55D241636310045E919 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */; };
+		4E88B55F24169DD80045E919 /* UIViewcontroller+DisplayValidationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceHolderColor.swift"; sourceTree = "<group>"; };
 		4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+CustomKeyboard.swift"; sourceTree = "<group>"; };
 		4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+DisplayValidationAlerts.swift"; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 				4E88B558241633180045E919 /* UITextField+PlaceHolderColor.swift */,
 				4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */,
 				4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */,
+				4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				4E14947B23F476B000E84126 /* FinanceCalculator.xcdatamodeld in Sources */,
 				4E88B5462412C0190045E919 /* Calculation.swift in Sources */,
+				4E88B55F24169DD80045E919 /* UIViewcontroller+DisplayValidationAlerts.swift in Sources */,
 				4E88B5482412C07D0045E919 /* CalculationViewCell.swift in Sources */,
 				4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */,
 				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
