@@ -149,6 +149,23 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     
     func calculateMissingComponent(){
         /// Identify missing component
+        var missingValue = 0.0
+        if (loanAmountTextField.text?.isEmpty)! {
+            missingValue = missingPrincipalAmount()
+            loanAmountTextField.text = String(missingValue)
+        }
+        if (interestTextField.text?.isEmpty)! {
+            missingValue = missingInterestRate()
+            interestTextField.text = String(missingValue)
+        }
+        if (paymentTextField.text?.isEmpty)! {
+            missingValue = missingMonthlyPayment()
+            paymentTextField.text = String(missingValue)
+        }
+        if (numberOfYearsTextField.text?.isEmpty)! {
+            missingValue = missingPaymentTerms()
+            numberOfYearsTextField.text = String(missingValue)
+        }
         /// Perform relavant calculation
     }
     
