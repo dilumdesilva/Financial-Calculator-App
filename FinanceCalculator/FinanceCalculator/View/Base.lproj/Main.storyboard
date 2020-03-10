@@ -293,41 +293,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-Aq-Q8S">
-                                <rect key="frame" x="0.0" y="88" width="414" height="695"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hc1-d0-CRI">
+                                <rect key="frame" x="20" y="108" width="374" height="35"/>
+                                <segments>
+                                    <segment title="Without R Contributions"/>
+                                    <segment title="With R Contributions"/>
+                                </segments>
+                            </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vfl-Pq-Gcq">
+                                <rect key="frame" x="0.0" y="162" width="414" height="648"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-Vg-8pX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-O2-dmS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aLL-BW-TB7">
-                                                <rect key="frame" x="8" y="8" width="398" height="679"/>
+                                            <stackView opaque="NO" contentMode="bottomRight" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="JVN-6G-wee" userLabel="Outer Stack View">
+                                                <rect key="frame" x="15" y="35" width="384" height="337.66666666666669"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-EX-Xp9" userLabel="M Loan Amount TF Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="65.666666666666671"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Loan Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rt-Nf-J0a">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bE-C1-uvl">
+                                                                <rect key="frame" x="0.0" y="31.666666666666657" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingChanged" id="dLP-QM-qtV"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SLN-72-QDu" userLabel="M Interest TF Stack View">
+                                                        <rect key="frame" x="0.0" y="90.666666666666686" width="384" height="65.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-5g-BFi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-xC-4cr">
+                                                                <rect key="frame" x="0.0" y="31.666666666666629" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="9Nt-vF-dQk"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ILF-0U-RjB" userLabel="M Payment TF Stack View">
+                                                        <rect key="frame" x="0.0" y="181.33333333333331" width="384" height="65.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrA-hs-Qef">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-op-iiY">
+                                                                <rect key="frame" x="0.0" y="31.666666666666686" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="JQd-aL-EJp"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="avb-Ue-Xc2" userLabel="M NoY TF Stack View">
+                                                        <rect key="frame" x="0.0" y="272" width="384" height="65.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Terms in Months" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PH-jE-u5k">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojv-VF-xeN">
+                                                                <rect key="frame" x="0.0" y="31.666666666666686" width="384" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="mortgageTextFieldDidChange:" destination="GYa-Lp-4td" eventType="editingDidEnd" id="bv8-Vm-jbV"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="aLL-BW-TB7" secondAttribute="trailing" constant="8" id="863-8B-ehm"/>
-                                            <constraint firstItem="aLL-BW-TB7" firstAttribute="top" secondItem="PUk-Vg-8pX" secondAttribute="top" constant="8" id="JfW-A8-DPE"/>
-                                            <constraint firstItem="aLL-BW-TB7" firstAttribute="leading" secondItem="PUk-Vg-8pX" secondAttribute="leading" constant="8" id="Q9t-Yh-jbJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="aLL-BW-TB7" secondAttribute="bottom" constant="8" id="WVM-Yb-umO"/>
+                                            <constraint firstItem="JVN-6G-wee" firstAttribute="leading" secondItem="cl3-O2-dmS" secondAttribute="leading" constant="15" id="BtC-Ko-Pbr"/>
+                                            <constraint firstAttribute="trailing" secondItem="JVN-6G-wee" secondAttribute="trailing" constant="15" id="EEK-hZ-WlJ"/>
+                                            <constraint firstItem="JVN-6G-wee" firstAttribute="top" secondItem="cl3-O2-dmS" secondAttribute="top" constant="35" id="Fz4-yR-FdH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="leading" secondItem="fVn-Aq-Q8S" secondAttribute="leading" id="8l5-S2-ucr"/>
-                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="top" secondItem="fVn-Aq-Q8S" secondAttribute="top" id="GzG-ir-oxm"/>
-                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="width" secondItem="fVn-Aq-Q8S" secondAttribute="width" id="M2b-Bt-iS9"/>
-                                    <constraint firstAttribute="trailing" secondItem="PUk-Vg-8pX" secondAttribute="trailing" id="N8E-9O-7VJ"/>
-                                    <constraint firstItem="PUk-Vg-8pX" firstAttribute="height" secondItem="fVn-Aq-Q8S" secondAttribute="height" priority="250" id="XgR-A8-Daf"/>
-                                    <constraint firstAttribute="bottom" secondItem="PUk-Vg-8pX" secondAttribute="bottom" id="eFn-zd-Hv9"/>
+                                    <constraint firstAttribute="bottom" secondItem="cl3-O2-dmS" secondAttribute="bottom" id="1M9-Oz-F4n"/>
+                                    <constraint firstItem="cl3-O2-dmS" firstAttribute="leading" secondItem="vfl-Pq-Gcq" secondAttribute="leading" id="GMG-Ze-HDe"/>
+                                    <constraint firstItem="cl3-O2-dmS" firstAttribute="width" secondItem="vfl-Pq-Gcq" secondAttribute="width" id="Xt7-8Y-9OO"/>
+                                    <constraint firstAttribute="trailing" secondItem="cl3-O2-dmS" secondAttribute="trailing" id="kiH-Bu-2yj"/>
+                                    <constraint firstItem="cl3-O2-dmS" firstAttribute="height" secondItem="vfl-Pq-Gcq" secondAttribute="height" priority="250" id="nzN-it-2TZ"/>
+                                    <constraint firstItem="cl3-O2-dmS" firstAttribute="top" secondItem="vfl-Pq-Gcq" secondAttribute="top" id="qIS-qN-X7o"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="eA7-lx-wOL"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="leading" secondItem="R9S-Bi-JTS" secondAttribute="leading" id="kYm-l4-Dsa"/>
-                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="top" secondItem="R9S-Bi-JTS" secondAttribute="top" id="rPp-52-ZoB"/>
-                            <constraint firstItem="R9S-Bi-JTS" firstAttribute="bottom" secondItem="fVn-Aq-Q8S" secondAttribute="bottom" constant="30" id="sLF-i6-oAd"/>
-                            <constraint firstItem="fVn-Aq-Q8S" firstAttribute="trailing" secondItem="R9S-Bi-JTS" secondAttribute="trailing" id="yXa-83-ktf"/>
+                            <constraint firstItem="hc1-d0-CRI" firstAttribute="top" secondItem="R9S-Bi-JTS" secondAttribute="top" constant="20" id="Chz-2J-c1f"/>
+                            <constraint firstItem="R9S-Bi-JTS" firstAttribute="trailing" secondItem="hc1-d0-CRI" secondAttribute="trailing" constant="20" id="faf-n5-xhh"/>
+                            <constraint firstItem="hc1-d0-CRI" firstAttribute="leading" secondItem="R9S-Bi-JTS" secondAttribute="leading" constant="20" id="qtQ-3d-QN6"/>
+                            <constraint firstItem="vfl-Pq-Gcq" firstAttribute="top" secondItem="hc1-d0-CRI" secondAttribute="bottom" constant="20" id="upR-vY-qJL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R9S-Bi-JTS"/>
                     </view>
@@ -511,7 +599,7 @@
         <!--Loans VC-->
         <scene sceneID="BXQ-QM-3Tt">
             <objects>
-                <viewController id="l2G-8H-V6Z" userLabel="Loans VC" sceneMemberID="viewController">
+                <viewController id="l2G-8H-V6Z" userLabel="Loans VC" customClass="loanViewController" customModule="Finance_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s2e-gG-lVU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,6 +626,9 @@
                                                                 <rect key="frame" x="0.0" y="31.666666666666657" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="loanTextFieldDidChange:" destination="l2G-8H-V6Z" eventType="valueChanged" id="ATS-9Y-bKc"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -554,6 +645,9 @@
                                                                 <rect key="frame" x="0.0" y="31.666666666666686" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="loanTextFieldDidChange:" destination="l2G-8H-V6Z" eventType="editingDidEnd" id="znb-2m-6P5"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -570,6 +664,9 @@
                                                                 <rect key="frame" x="0.0" y="31.666666666666686" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="loanTextFieldDidChange:" destination="l2G-8H-V6Z" eventType="editingDidEnd" id="qRt-I6-l2c"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -586,6 +683,9 @@
                                                                 <rect key="frame" x="0.0" y="31.666666666666686" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="loanTextFieldDidChange:" destination="l2G-8H-V6Z" eventType="editingDidEnd" id="sWe-7i-63e"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -623,11 +723,39 @@
                     </view>
                     <navigationItem key="navigationItem" title="Loans" id="VsX-I1-BgA">
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_save" id="Oa7-K2-xBt"/>
-                            <barButtonItem image="play.fill" catalog="system" id="rze-Cb-tTr"/>
-                            <barButtonItem image="arrow.clockwise" catalog="system" id="SN4-5Z-MoL"/>
+                            <barButtonItem image="icon_save" id="Oa7-K2-xBt">
+                                <connections>
+                                    <action selector="saveCalculation:" destination="l2G-8H-V6Z" id="bgr-2R-Bkw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="play.fill" catalog="system" id="rze-Cb-tTr">
+                                <connections>
+                                    <action selector="performCalculation:" destination="l2G-8H-V6Z" id="MCq-F5-SAq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="SN4-5Z-MoL">
+                                <connections>
+                                    <action selector="resetLoanView:" destination="l2G-8H-V6Z" id="dVy-Bh-34d"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnCalculate" destination="rze-Cb-tTr" id="hCN-eC-2XE"/>
+                        <outlet property="btnReset" destination="SN4-5Z-MoL" id="4y1-S8-Vmg"/>
+                        <outlet property="btnSave" destination="Oa7-K2-xBt" id="fJM-CU-ezB"/>
+                        <outlet property="interestTextField" destination="4bM-jB-7gq" id="LTE-ks-8RF"/>
+                        <outlet property="loanAmountTextField" destination="aTG-Rp-PF6" id="027-VF-o2t"/>
+                        <outlet property="loanVCInterestTFStackView" destination="ZjH-ps-h0U" id="aha-VD-XZg"/>
+                        <outlet property="loanVCLoanAmountTFStackView" destination="j8n-K0-2hx" id="l2e-Nn-GPt"/>
+                        <outlet property="loanVCNumberOfPaymentsTFStackView" destination="bYU-yC-2IV" id="BFY-LZ-rGR"/>
+                        <outlet property="loanVCPaymentTFStackView" destination="keD-75-92B" id="Ome-iT-VaE"/>
+                        <outlet property="numberOfPayments" destination="1jd-SI-ObL" id="6Bz-AH-uVu"/>
+                        <outlet property="outerStackView" destination="mw2-iC-tpy" id="s1D-oS-sNQ"/>
+                        <outlet property="outerStackViewTopConstaint" destination="VW0-rs-v6F" id="wbd-bT-xKW"/>
+                        <outlet property="paymentTextField" destination="he0-64-DoW" id="fXa-fz-7zp"/>
+                        <outlet property="viewScroller" destination="MB8-2v-oVc" id="S4c-7x-EuA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6d-pc-wIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

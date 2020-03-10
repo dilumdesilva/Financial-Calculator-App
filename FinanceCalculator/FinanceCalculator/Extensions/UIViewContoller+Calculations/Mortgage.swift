@@ -39,7 +39,7 @@ extension UIViewController {
         let R = (interest / 100.0) / 12
         let N = terms
         let P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
-        return P
+        return P.toFixed(2)
     }
     
     ///

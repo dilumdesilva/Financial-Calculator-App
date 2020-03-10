@@ -38,9 +38,12 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func handleSegmentedControllerChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
+        case 2:
+            calculationType = LOAN_USER_DEFAULTS_KEY
+            icon = UIImage(named: "icon_s_loan")!
         case 3:
             calculationType = MORTGAGE_USER_DEFAULTS_KEY
-            icon = UIImage(named: "icon_s_loan")!
+            icon = UIImage(named: "icon_s_mortgage")!
         default:
             break
         }
