@@ -136,19 +136,18 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     
     /// This function will trigger when user pressed on the save button
     @IBAction func saveCalculation(_ sender: UIBarButtonItem) {
-        
         ///
         /// P           -    loanAmount
         /// R           -    interest rate
         /// PMT      -    Payment
         /// N           -    Number of Terms in months
         ///
-        if !isTextFieldEmpty(){
-            let calculation = "\(loanAmountTextField.text) P = \(interestTextField.text) R = \(paymentTextField.text) PMT = \(numberOfTermsInMonths) N ="
+        if !isTextFieldEmpty() {
+            let calculation = "P = \(loanAmountTextField.text!),  R = \(interestTextField.text!),\nPMT = \(paymentTextField.text!),  N = \(numberOfTermsInMonths.text!)"
             
             var arr = UserDefaults.standard.array(forKey: MORTGAGE_USER_DEFAULTS_KEY) as? [String] ?? []
             
-            if arr.count >= MORTGAGE_USER_DEFAULTS_MAX_COUNT{
+            if arr.count >= MORTGAGE_USER_DEFAULTS_MAX_COUNT {
                 arr = Array(arr.suffix(MORTGAGE_USER_DEFAULTS_MAX_COUNT - 1))
             }
             
@@ -157,11 +156,10 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
             
             showAlert(message: "You Mortgage Calculation has been saved successfully", title: "Saving Successfull")
             
-        }else{
+        } else {
             showAlert(message: "You are trying to save an empty conversion!", title: "Moartage Calculation Saving Error")
         }
     }
-    
     
     /// Function which is getting triggered once a textbox is changed
     @IBAction func mortgageTextFieldDidChange(_ sender: UITextField) {
@@ -207,7 +205,7 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
         if (numberOfTermsInMonths.text?.isEmpty)! {
             do {
                 try missingValue = Double(missingPaymentTerms(interest: R!, principalAmount: P!, monthlyPayment: PMT!))
-            } catch let err  {
+            } catch let err {
                 print(err)
             }
             numberOfTermsInMonths.text = String(missingValue)

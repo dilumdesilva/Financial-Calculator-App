@@ -13,7 +13,7 @@ import UIKit
 extension UITableView {
     
     /// This function sets an empty message on the table view.
-    func setEmptyMessage(_ message: String,_ messageColour: UIColor) {
+    func setTableEmptyMessage(_ message: String,_ messageColour: UIColor) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = message
         messageLabel.textColor = messageColour

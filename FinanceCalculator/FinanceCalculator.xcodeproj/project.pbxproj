@@ -32,6 +32,11 @@
 		4E88B55D241636310045E919 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */; };
 		4E88B55F24169DD80045E919 /* UIViewcontroller+DisplayValidationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */; };
 		4E88B56324173B0D0045E919 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B56224173B0D0045E919 /* Conversions.swift */; };
+		4E88B5672417798E0045E919 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5662417798E0045E919 /* History.swift */; };
+		4E88B5692417868B0045E919 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B5682417868A0045E919 /* LoanViewController.swift */; };
+		4E88B56B241786F30045E919 /* SavingsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B56A241786F30045E919 /* SavingsViewContoller.swift */; };
+		4E88B56D24178CCB0045E919 /* UITableView+SetEmptyTableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B56C24178CCB0045E919 /* UITableView+SetEmptyTableMessage.swift */; };
+		4E88B56F24178E900045E919 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B56E24178E900045E919 /* HistoryTableViewCell.swift */; };
 		4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */; };
 		4EAD2E2923F5F78000E99281 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */; };
 /* End PBXBuildFile section */
@@ -85,6 +90,11 @@
 		4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+DisplayValidationAlerts.swift"; sourceTree = "<group>"; };
 		4E88B56224173B0D0045E919 /* Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
+		4E88B5662417798E0045E919 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		4E88B5682417868A0045E919 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
+		4E88B56A241786F30045E919 /* SavingsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewContoller.swift; sourceTree = "<group>"; };
+		4E88B56C24178CCB0045E919 /* UITableView+SetEmptyTableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SetEmptyTableMessage.swift"; sourceTree = "<group>"; };
+		4E88B56E24178E900045E919 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4EAD2E2623F5F74900E99281 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4EAD2E2823F5F78000E99281 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +205,7 @@
 				4E88B55A241636150045E919 /* UITextField+CustomKeyboard.swift */,
 				4E88B55C241636310045E919 /* UIViewController+HideKeyboard.swift */,
 				4E88B55E24169DD70045E919 /* UIViewcontroller+DisplayValidationAlerts.swift */,
+				4E88B56C24178CCB0045E919 /* UITableView+SetEmptyTableMessage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +215,8 @@
 			children = (
 				4E88B5452412C0190045E919 /* Calculation.swift */,
 				4E88B5472412C07D0045E919 /* CalculationViewCell.swift */,
+				4E88B5662417798E0045E919 /* History.swift */,
+				4E88B56E24178E900045E919 /* HistoryTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +240,8 @@
 				4E753CC624083FD800A20462 /* HistoryViewController.swift */,
 				4E753CC824083FFA00A20462 /* HelpViewController.swift */,
 				4E88B55624161F260045E919 /* MortgageViewController.swift */,
+				4E88B5682417868A0045E919 /* LoanViewController.swift */,
+				4E88B56A241786F30045E919 /* SavingsViewContoller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,13 +401,16 @@
 				4E88B5462412C0190045E919 /* Calculation.swift in Sources */,
 				4E88B55F24169DD80045E919 /* UIViewcontroller+DisplayValidationAlerts.swift in Sources */,
 				4E88B5482412C07D0045E919 /* CalculationViewCell.swift in Sources */,
+				4E88B56F24178E900045E919 /* HistoryTableViewCell.swift in Sources */,
 				4E88B54E2412DE960045E919 /* Mortgage.swift in Sources */,
 				4EAD2E2723F5F74900E99281 /* CustomKeyboard.swift in Sources */,
 				4E88B54A2412DE610045E919 /* CompoundInterestSavings.swift in Sources */,
 				4E14947123F476B000E84126 /* AppDelegate.swift in Sources */,
 				4E88B55424143EED0045E919 /* CardCell.swift in Sources */,
+				4E88B5672417798E0045E919 /* History.swift in Sources */,
 				4E88B56324173B0D0045E919 /* Conversions.swift in Sources */,
 				4E753CC924083FFA00A20462 /* HelpViewController.swift in Sources */,
+				4E88B5692417868B0045E919 /* LoanViewController.swift in Sources */,
 				4E88B55D241636310045E919 /* UIViewController+HideKeyboard.swift in Sources */,
 				4E88B559241633180045E919 /* UITextField+PlaceHolderColor.swift in Sources */,
 				4E88B54C2412DE820045E919 /* Loans.swift in Sources */,
@@ -400,6 +418,8 @@
 				4E753CC524083FBB00A20462 /* CalculationsViewController.swift in Sources */,
 				4E753CC724083FD800A20462 /* HistoryViewController.swift in Sources */,
 				4E14947323F476B000E84126 /* SceneDelegate.swift in Sources */,
+				4E88B56B241786F30045E919 /* SavingsViewContoller.swift in Sources */,
+				4E88B56D24178CCB0045E919 /* UITableView+SetEmptyTableMessage.swift in Sources */,
 				4E88B55724161F260045E919 /* MortgageViewController.swift in Sources */,
 				4E88B55B241636150045E919 /* UITextField+CustomKeyboard.swift in Sources */,
 			);

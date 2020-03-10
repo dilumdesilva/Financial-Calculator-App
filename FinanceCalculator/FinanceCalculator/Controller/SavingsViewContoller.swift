@@ -6,4 +6,7 @@
 //  Copyright © 2020 Dilum De Silva. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+let SAVINGS_WRC_USER_DEFAULTS_KEY = "savingswrc"
+let SAVINGS_WORC_USER_DEFAULTS_KEY = "savingsworc"

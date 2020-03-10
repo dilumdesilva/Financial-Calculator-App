@@ -35,16 +35,97 @@
                     <view key="view" contentMode="scaleToFill" id="tWo-H2-RSO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="zbt-MG-WtQ">
+                                <rect key="frame" x="20" y="116" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Savings"/>
+                                    <segment title="Savings WRC"/>
+                                    <segment title="Loan"/>
+                                    <segment title="Mortgage"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleSegmentedControllerChanged:" destination="VOk-9C-mPf" eventType="valueChanged" id="bp4-o9-SwS"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="goH-eJ-5n6">
+                                <rect key="frame" x="0.0" y="173" width="414" height="640"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="hIO-oc-5XL" userLabel="Cell" customClass="HistoryTableViewCell" customModule="Finance_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hIO-oc-5XL" id="DVK-yf-prg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EMx-9k-MhG">
+                                                    <rect key="frame" x="30" y="21" width="80" height="88"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="Bve-wn-anD"/>
+                                                        <constraint firstAttribute="width" constant="80" id="S3z-mC-UM9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-We-ucP">
+                                                    <rect key="frame" x="130" y="21" width="264" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quw-iX-963">
+                                                    <rect key="frame" x="130" y="50" width="264" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4xO-We-ucP" firstAttribute="leading" secondItem="EMx-9k-MhG" secondAttribute="trailing" constant="20" id="2kE-T7-6uj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Quw-iX-963" secondAttribute="trailing" constant="20" id="9tv-Qd-UN8"/>
+                                                <constraint firstItem="EMx-9k-MhG" firstAttribute="top" secondItem="DVK-yf-prg" secondAttribute="topMargin" constant="10" id="MaD-VC-Cv5"/>
+                                                <constraint firstItem="Quw-iX-963" firstAttribute="leading" secondItem="EMx-9k-MhG" secondAttribute="trailing" constant="20" id="TSM-95-LVb"/>
+                                                <constraint firstItem="EMx-9k-MhG" firstAttribute="centerY" secondItem="DVK-yf-prg" secondAttribute="centerY" id="Wed-Sx-CdN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EMx-9k-MhG" secondAttribute="bottom" constant="10" id="fxu-tX-fYi"/>
+                                                <constraint firstItem="EMx-9k-MhG" firstAttribute="leading" secondItem="DVK-yf-prg" secondAttribute="leadingMargin" constant="10" id="m1d-bh-ieu"/>
+                                                <constraint firstAttribute="trailing" secondItem="4xO-We-ucP" secondAttribute="trailing" constant="20" id="mua-P9-QEb"/>
+                                                <constraint firstItem="4xO-We-ucP" firstAttribute="top" secondItem="DVK-yf-prg" secondAttribute="topMargin" constant="10" id="mxH-cq-fBJ"/>
+                                                <constraint firstItem="Quw-iX-963" firstAttribute="top" secondItem="4xO-We-ucP" secondAttribute="bottom" constant="10" id="tpc-ig-oD6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgVHistoryTypeIcon" destination="EMx-9k-MhG" id="5FM-lD-ns5"/>
+                                            <outlet property="lblCalculationHistory" destination="Quw-iX-963" id="Rsk-AS-80y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="goH-eJ-5n6" firstAttribute="bottom" secondItem="IHO-Nc-Ndj" secondAttribute="bottom" id="3xa-ZR-b3u"/>
+                            <constraint firstItem="goH-eJ-5n6" firstAttribute="leading" secondItem="IHO-Nc-Ndj" secondAttribute="leading" id="RIn-Dk-kVN"/>
+                            <constraint firstItem="goH-eJ-5n6" firstAttribute="trailing" secondItem="IHO-Nc-Ndj" secondAttribute="trailing" id="XeE-6u-WRx"/>
+                            <constraint firstItem="goH-eJ-5n6" firstAttribute="top" secondItem="zbt-MG-WtQ" secondAttribute="bottom" constant="26" id="ueH-Yd-5Ap"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IHO-Nc-Ndj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Histoty" id="RyB-rX-jYZ">
-                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="a8R-5S-YvW"/>
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="a8R-5S-YvW">
+                            <connections>
+                                <action selector="performClearHistory:" destination="VOk-9C-mPf" id="AkA-E5-6Le"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnClearHistory" destination="a8R-5S-YvW" id="l4F-UG-RB2"/>
+                        <outlet property="segmentedControl" destination="zbt-MG-WtQ" id="AkU-t6-a70"/>
+                        <outlet property="tableView" destination="goH-eJ-5n6" id="YDf-RX-EJx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcA-Xx-uB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="2040"/>
+            <point key="canvasLocation" x="2608.6956521739135" y="2039.7321428571427"/>
         </scene>
         <!--Help VC -->
         <scene sceneID="nhJ-lh-wog">
