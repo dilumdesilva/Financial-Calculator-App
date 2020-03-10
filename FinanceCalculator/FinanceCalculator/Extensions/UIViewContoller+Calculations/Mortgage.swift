@@ -6,6 +6,7 @@
 //  Copyright © 2020 Dilum De Silva. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 extension UIViewController {
@@ -34,16 +35,14 @@ extension UIViewController {
     ///     P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
     ///
     func missingPrincipalAmount(interest: Double, monthlyPayment: Double, terms: Double) -> Double {
-        let PMT = monthlyPayment;
-        let R = (interest / 100.0) / 12;
-        let N = terms;
-        let P = (PMT / R) * (1 - (1 / pow(1 + R, N)));
+        let PMT = monthlyPayment
+        let R = (interest / 100.0) / 12
+        let N = terms
+        let P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
         return P
     }
     
     func missingInterestRate() -> Double {
-        
-        
         return 2.0
     }
     
@@ -61,7 +60,7 @@ extension UIViewController {
         let R = (interest / 100.0) / 12
         let P = principalAmount
         let N = terms
-        let PMT = (R * P) / (1 - pow(1 + R, -N));
+        let PMT = (R * P) / (1 - pow(1 + R, -N))
         return PMT
     }
     
@@ -75,7 +74,24 @@ extension UIViewController {
     /// Calculation for monthly payment:
     ///     N = (log(D/(D-PV)) / log(1+I))
     ///
-    func missingPaymentTerms(interest: Double, principalAmount: Double, monthlyPayment: Double) -> Int {
-        return 2.0
+    func missingPaymentTerms(interest: Double, principalAmount: Double, monthlyPayment: Double) throws -> Int {
+        /// To find the minimum monthly payment
+        let minMonthlyPayment = missingMonthlyPayment(interest: interest, principalAmount: principalAmount, terms: 1) - principalAmount
+        
+        if Int(monthlyPayment) <= Int(minMonthlyPayment) {
+            throw calculationError.runtimeError("Invalid monthly payment")
+        }
+        
+        let PMT = monthlyPayment
+        let P = principalAmount
+        let I = (interest / 100.0) / 12
+        let D = PMT / I
+        let N = (log(D / (D - P)) / log(1 + I))
+        return Int(N.rounded())
+    }
+    
+    /// To indicate runtime errors during the calculations
+    enum calculationError: Error {
+        case runtimeError(String)
     }
 }
