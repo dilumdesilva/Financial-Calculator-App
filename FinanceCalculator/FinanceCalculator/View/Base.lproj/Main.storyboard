@@ -56,31 +56,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UEb-zE-tT8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Help" id="ggs-It-zCL"/>
-                    <connections>
-                        <segue destination="4w0-gk-c3H" kind="show" id="sgH-iH-KeO"/>
-                        <segue destination="Z9J-JM-RHq" kind="show" id="fAa-Bf-qeQ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Help" id="ggs-It-zCL">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle.fill" catalog="system" id="Hxf-S5-GlP">
+                            <connections>
+                                <segue destination="Z9J-JM-RHq" kind="show" id="ZhM-ZQ-icn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuv-2S-PgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4348" y="2040"/>
-        </scene>
-        <!--Financial Formulas VC-->
-        <scene sceneID="4ah-33-pdM">
-            <objects>
-                <viewController id="4w0-gk-c3H" userLabel="Financial Formulas VC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="McZ-r3-Ufp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="9Yg-0Z-kqA"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Financial Formulas" id="fjh-Ru-XM4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-QY-n1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3912" y="2867"/>
         </scene>
         <!--About VC-->
         <scene sceneID="tBQ-zc-DNN">
@@ -89,14 +75,72 @@
                     <view key="view" contentMode="scaleToFill" id="bMx-pe-Ocw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-uY-QjJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_splash_icon_FC" translatesAutoresizingMaskIntoConstraints="NO" id="5U1-RI-vNG">
+                                        <rect key="frame" x="80" y="120" width="254" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="hmr-hz-ldQ"/>
+                                            <constraint firstAttribute="width" constant="254" id="kY7-9A-FoN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-eD-0ss">
+                                        <rect key="frame" x="171.66666666666666" y="436" width="71" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2020 Finance Calculator.  All rights reserve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGM-dy-hXZ">
+                                        <rect key="frame" x="78.666666666666686" y="660" width="257" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finance Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-sZ-TOQ">
+                                        <rect key="frame" x="59.666666666666657" y="386" width="294.66666666666674" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Dilum De Silva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWG-hM-wHJ">
+                                        <rect key="frame" x="95.666666666666686" y="543" width="223" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ukq-sZ-TOQ" firstAttribute="centerX" secondItem="IzX-uY-QjJ" secondAttribute="centerX" id="7fq-jJ-nzR"/>
+                                    <constraint firstItem="5U1-RI-vNG" firstAttribute="leading" secondItem="IzX-uY-QjJ" secondAttribute="leading" constant="80" id="HYB-eJ-hjf"/>
+                                    <constraint firstItem="BWG-hM-wHJ" firstAttribute="centerX" secondItem="IzX-uY-QjJ" secondAttribute="centerX" id="JVx-mp-unx"/>
+                                    <constraint firstAttribute="bottom" secondItem="sGM-dy-hXZ" secondAttribute="bottom" constant="50" id="Ncm-K3-ddI"/>
+                                    <constraint firstItem="u5o-eD-0ss" firstAttribute="centerX" secondItem="IzX-uY-QjJ" secondAttribute="centerX" id="V9h-pU-aIj"/>
+                                    <constraint firstItem="5U1-RI-vNG" firstAttribute="top" secondItem="IzX-uY-QjJ" secondAttribute="top" constant="120" id="WEe-pc-Mk9"/>
+                                    <constraint firstItem="u5o-eD-0ss" firstAttribute="top" secondItem="Ukq-sZ-TOQ" secondAttribute="bottom" constant="8" id="jch-80-Thr"/>
+                                    <constraint firstItem="BWG-hM-wHJ" firstAttribute="top" secondItem="u5o-eD-0ss" secondAttribute="bottom" constant="90" id="m93-6R-5A8"/>
+                                    <constraint firstAttribute="trailing" secondItem="5U1-RI-vNG" secondAttribute="trailing" constant="80" id="mwN-Cq-MXe"/>
+                                    <constraint firstItem="sGM-dy-hXZ" firstAttribute="centerX" secondItem="BWG-hM-wHJ" secondAttribute="centerX" id="nlr-pA-AWe"/>
+                                    <constraint firstItem="Ukq-sZ-TOQ" firstAttribute="top" secondItem="5U1-RI-vNG" secondAttribute="bottom" constant="16" id="soJ-NR-2oe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IzX-uY-QjJ" firstAttribute="bottom" secondItem="QHK-Cq-22G" secondAttribute="bottom" id="FCW-e1-uBi"/>
+                            <constraint firstItem="IzX-uY-QjJ" firstAttribute="leading" secondItem="QHK-Cq-22G" secondAttribute="leading" id="rXT-R5-4db"/>
+                            <constraint firstItem="IzX-uY-QjJ" firstAttribute="top" secondItem="QHK-Cq-22G" secondAttribute="top" id="uGc-Sa-dK8"/>
+                            <constraint firstItem="IzX-uY-QjJ" firstAttribute="trailing" secondItem="QHK-Cq-22G" secondAttribute="trailing" id="yc9-si-B51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QHK-Cq-22G"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="WCv-zC-ggC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7K-Ua-Jg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4826" y="2867"/>
+            <point key="canvasLocation" x="4386.9565217391309" y="2757.5892857142858"/>
         </scene>
         <!--Calculations VC-->
         <scene sceneID="3jy-nG-oQg">
@@ -295,7 +339,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-YF-Lrb" userLabel="M NoY TF Stack View">
                                                         <rect key="frame" x="0.0" y="272" width="384" height="65.666666666666686"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Number of Years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-bN-48w">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortgage Terms in Months" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-bN-48w">
                                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                                 <nil key="textColor"/>
@@ -345,7 +389,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Mortgage" id="o8b-A0-JiC">
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_save" id="xNc-J4-MF9"/>
+                            <barButtonItem image="icon_save" id="xNc-J4-MF9">
+                                <connections>
+                                    <action selector="saveCalculation:" destination="GYa-Lp-4td" id="Woa-kr-v89"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="play.fill" catalog="system" id="i0p-Rv-imT">
                                 <connections>
                                     <action selector="performCalculation:" destination="GYa-Lp-4td" id="J9E-Zr-HmF"/>
@@ -368,7 +416,7 @@
                         <outlet property="mortgageLoanAmountTFStackView" destination="MmY-m4-Loe" id="9NF-oP-rfE"/>
                         <outlet property="mortgageNoYearsTFStackView" destination="Fb1-YF-Lrb" id="Kiy-oO-Pto"/>
                         <outlet property="mortgagePaymentTFStackView" destination="GWG-mM-KC1" id="qAr-qi-dyp"/>
-                        <outlet property="numberOfYearsTextField" destination="rBN-u4-SvP" id="5Xw-hn-nyk"/>
+                        <outlet property="numberOfTermsInMonths" destination="rBN-u4-SvP" id="5Xw-hn-nyk"/>
                         <outlet property="outerStackView" destination="ODv-So-6sw" id="sXD-TF-mXU"/>
                         <outlet property="outerStackViewTopConstaint" destination="jCA-em-IrR" id="idw-w2-tmx"/>
                         <outlet property="paymentTextField" destination="0uk-Vr-Htp" id="UX6-Ws-vzB"/>
@@ -563,11 +611,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app_splash_icon_FC" width="1501" height="1537"/>
         <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="icon_calculator" width="25" height="25"/>
         <image name="icon_history" width="25" height="25"/>
         <image name="icon_save" width="25" height="25"/>
         <image name="icon_support" width="25" height="25"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
