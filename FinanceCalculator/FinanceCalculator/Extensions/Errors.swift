@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIViewController {
-    
     /// To indicate runtime errors during the calculations
     enum CalculationError: Error {
         case runtimeError(String)

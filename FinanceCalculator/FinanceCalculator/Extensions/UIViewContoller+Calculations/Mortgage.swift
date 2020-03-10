@@ -30,7 +30,8 @@ extension UIViewController {
     ///     interest: Double                   - R
     ///     terms: Double                      - N
     ///
-    /// Calculation for principalAmount:  P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
+    /// Calculation for principalAmount:
+    ///     P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
     ///
     func missingPrincipalAmount(interest: Double, monthlyPayment: Double, terms: Double) -> Double {
         let PMT = monthlyPayment;
@@ -41,6 +42,8 @@ extension UIViewController {
     }
     
     func missingInterestRate() -> Double {
+        
+        
         return 2.0
     }
     
@@ -51,7 +54,8 @@ extension UIViewController {
     ///     interest: Double                   - R
     ///     terms: Double                      - N
     ///
-    /// Calculation for monthly payment:  PMT = (R * P) / (1 - pow(1 + R, -N))
+    /// Calculation for monthly payment:
+    ///     PMT = (R * P) / (1 - pow(1 + R, -N))
     ///
     func missingMonthlyPayment(interest: Double, principalAmount: Double, terms: Double) -> Double {
         let R = (interest / 100.0) / 12
@@ -61,7 +65,17 @@ extension UIViewController {
         return PMT
     }
     
-    func missingPaymentTerms() -> Double {
+    ///
+    /// Calcualates the missing monthly payment when principalAmount, interest and terms are given
+    /// Parmeters:
+    ///     principalAmount: Double     - P
+    ///     interest: Double                   - R
+    ///     monthlyPayment: Double    - PMT
+    ///
+    /// Calculation for monthly payment:
+    ///     N = (log(D/(D-PV)) / log(1+I))
+    ///
+    func missingPaymentTerms(interest: Double, principalAmount: Double, monthlyPayment: Double) -> Int {
         return 2.0
     }
 }
