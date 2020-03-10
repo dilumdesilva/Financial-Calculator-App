@@ -42,8 +42,52 @@ extension UIViewController {
         return P
     }
     
-    func missingInterestRate() -> Double {
-        return 2.0
+    ///
+    /// Calcualates the missing monthly payment when principalAmount, interest and terms are given
+    /// Parmeters:
+    ///     principalAmount: Double     - P
+    ///     monthlyPayment: Double    - PMT
+    ///     terms: Double                      - N
+    ///
+    /// Calculation for monthly payment:
+    ///
+    ///
+    func missingInterestRate(principalAmount: Double, monthlyPayment: Double, terms: Double) -> Double {
+        /// initial calculation
+        var x = 1 + (((monthlyPayment*terms/principalAmount) - 1) / 12)
+        /// var x = 0.1;
+        let FINANCIAL_PRECISION = Double(0.000001) // 1e-6
+        
+        func F(_ x: Double) -> Double { // f(x)
+            /// (loan * x * (1 + x)^n) / ((1+x)^n - 1) - pmt
+            return Double(principalAmount * x * pow(1 + x, terms) / (pow(1+x, terms) - 1) - monthlyPayment);
+        }
+                            
+        func FPrime(_ x: Double) -> Double { // f'(x)
+            /// (loan * (x+1)^(n-1) * ((x*(x+1)^n + (x+1)^n-n*x-x-1)) / ((x+1)^n - 1)^2)
+            let c_derivative = pow(x+1, terms)
+            return Double(principalAmount * pow(x+1, terms-1) *
+                (x * c_derivative + c_derivative - (terms*x) - x - 1)) / pow(c_derivative - 1, 2)
+        }
+        
+        while(abs(F(x)) > FINANCIAL_PRECISION) {
+            x = x - F(x) / FPrime(x)
+        }
+
+        /// Convert to yearly interest & Return as a percentage
+        /// with two decimal fraction digits
+
+        let R = Double(12 * x * 100).toFixed(2)
+
+        /// if the found value for I is inf or less than zero
+        /// there's no interest applied
+        if R.isNaN || R.isInfinite || R < 0 {
+            return 0.0;
+        } else {
+          /// this may return a value more than 100% for cases such as
+          /// where payment = 2000, terms = 12, amount = 10000  <--- unreal figures
+          return R
+        }
     }
     
     ///
