@@ -64,9 +64,9 @@ class CalculationsViewController: UIViewController {
     ///     - Loans
     ///     - Mortgage
     func generateCalculations() {
-        let compundSavings = Calculation(name: "Savings", icon: UIImage(named: "icon_savings")!, segueID: "goToSavingsCalculation", cellColour: UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1.00))
-        let loans = Calculation(name: "Loan", icon: UIImage(named: "icon_loan")!, segueID: "goToLoansCalculation", cellColour: UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1.00))
-        let mortgage = Calculation(name: "Mortgage", icon: UIImage(named: "icon_mortgage")!, segueID: "goToMortgageCalculation", cellColour: UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1.00))
+        let compundSavings = Calculation(name: "Savings", icon: UIImage(named: "icon_savings")!, segueID: "goToSavingsCalculation", cellColour: UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1.00))
+        let loans = Calculation(name: "Loan", icon: UIImage(named: "icon_loan")!, segueID: "goToLoansCalculation", cellColour: UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1.00))
+        let mortgage = Calculation(name: "Mortgage", icon: UIImage(named: "icon_mortgage")!, segueID: "goToMortgageCalculation", cellColour: UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1.00))
         
         calculations += [compundSavings, loans, mortgage]
     }

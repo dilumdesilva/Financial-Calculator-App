@@ -9,36 +9,33 @@
 import UIKit
 
 let LOAN_USER_DEFAULTS_KEY = "loan"
-private let LOAN_USER_DEFAULTS_MAX_COUNT = 3
+private let LOAN_USER_DEFAULTS_MAX_COUNT = 5
 
-class loanViewController: UIViewController, CustomKeyboardDelegate{
-
-    @IBOutlet weak var viewScroller: UIScrollView!
-    @IBOutlet weak var outerStackView: UIStackView!
-    @IBOutlet weak var outerStackViewTopConstaint: NSLayoutConstraint!
+class loanViewController: UIViewController, CustomKeyboardDelegate {
+    @IBOutlet var viewScroller: UIScrollView!
+    @IBOutlet var outerStackView: UIStackView!
+    @IBOutlet var outerStackViewTopConstaint: NSLayoutConstraint!
     
-    @IBOutlet weak var loanVCLoanAmountTFStackView: UIStackView!
-    @IBOutlet weak var loanAmountTextField: UITextField!
+    @IBOutlet var loanVCLoanAmountTFStackView: UIStackView!
+    @IBOutlet var loanAmountTextField: UITextField!
     
-    @IBOutlet weak var loanVCInterestTFStackView: UIStackView!
-    @IBOutlet weak var interestTextField: UITextField!
+    @IBOutlet var loanVCInterestTFStackView: UIStackView!
+    @IBOutlet var interestTextField: UITextField!
     
-    @IBOutlet weak var loanVCPaymentTFStackView: UIStackView!
-    @IBOutlet weak var paymentTextField: UITextField!
+    @IBOutlet var loanVCPaymentTFStackView: UIStackView!
+    @IBOutlet var paymentTextField: UITextField!
     
-    @IBOutlet weak var loanVCNumberOfPaymentsTFStackView: UIStackView!
-    @IBOutlet weak var numberOfPayments: UITextField!
+    @IBOutlet var loanVCNumberOfPaymentsTFStackView: UIStackView!
+    @IBOutlet var numberOfPayments: UITextField!
     
-    @IBOutlet weak var btnReset: UIBarButtonItem!
-    @IBOutlet weak var btnCalculate: UIBarButtonItem!
-    @IBOutlet weak var btnSave: UIBarButtonItem!
-    
+    @IBOutlet var btnReset: UIBarButtonItem!
+    @IBOutlet var btnCalculate: UIBarButtonItem!
+    @IBOutlet var btnSave: UIBarButtonItem!
     
     var activeTextField = UITextField()
     var outerStackViewTopConstraintDefaultHeight: CGFloat = 10.0
     var textFieldToKeyBoardGap = 10
     var keyBoardHeight: CGFloat = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,27 +43,24 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide)))
         
         if validateTexFields() == 0 {
-           btnReset.isEnabled = false
-           btnCalculate.isEnabled = false
-           btnSave.isEnabled = false
+            btnReset.isEnabled = false
+            btnCalculate.isEnabled = false
+            btnSave.isEnabled = false
         }
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        /// setting text field styles
-        loanAmountTextField._darkPlaceHolderColor(UIColor.darkText)
+        /// setting custom numeric keyboard
+        setCustomNumericKeyboard()
+    }
+    
+    /// Setting custom keyboard as the keyboard for all the text fields
+    func setCustomNumericKeyboard() {
         loanAmountTextField.setAsNumericKeyboard(delegate: self)
-        
-        interestTextField._darkPlaceHolderColor(UIColor.darkText)
         interestTextField.setAsNumericKeyboard(delegate: self)
-        
-        paymentTextField._darkPlaceHolderColor(UIColor.darkText)
         paymentTextField.setAsNumericKeyboard(delegate: self)
-        
-        numberOfPayments._darkPlaceHolderColor(UIColor.darkText)
         numberOfPayments.setAsNumericKeyboard(delegate: self)
         
         /// Obser which tracks the keyboard show event
@@ -100,19 +94,6 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
         interestTextField.text = ""
         paymentTextField.text = ""
         numberOfPayments.text = ""
-    }
-    
-    /// Resuable function to check whether the text feilds are empty
-    /// - Warning: This function needs to be changed when a new text field is added
-    ///
-    /// Usage:
-    ///     if isTextFieldsEmpty() // true | false
-    ///
-    func isTextFieldEmpty() -> Bool {
-        if !(loanAmountTextField.text?.isEmpty)!, !(interestTextField.text?.isEmpty)!, !(paymentTextField.text?.isEmpty)!, !(numberOfPayments.text?.isEmpty)! {
-            return false
-        }
-        return true
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -159,7 +140,6 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
         
         return nil
     }
-    
     
     /// This will function will invoked by the ui tap gesture
     @objc func keyboardWillHide() {
@@ -229,7 +209,6 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
         }
     }
     
-    
     @IBAction func saveCalculation(_ sender: Any) {
         ///
         /// P           -    loanAmount
@@ -237,7 +216,7 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
         /// PMT      -    Payment
         /// N           -    Number of Terms in months
         ///
-        if !isTextFieldEmpty() {
+        if validateTexFields() == 4 {
             let calculation = "P = \(loanAmountTextField.text!),  R = \(interestTextField.text!),\nPMT = \(paymentTextField.text!),  N = \(numberOfPayments.text!)"
             
             var arr = UserDefaults.standard.array(forKey: LOAN_USER_DEFAULTS_KEY) as? [String] ?? []
@@ -249,13 +228,12 @@ class loanViewController: UIViewController, CustomKeyboardDelegate{
             arr.append(calculation)
             UserDefaults.standard.set(arr, forKey: LOAN_USER_DEFAULTS_KEY)
             
-            showAlert(message: "You Loan Calculation has been saved successfully", title: "Saving Successfull")
+            showAlert(message: "You Loan Calculation has been saved check history section for saved data", title: "Saved Successfully")
             
         } else {
             showAlert(message: "You are trying to save an empty conversion!", title: "Loan Calculation Saving Error")
         }
     }
-    
     
     @IBAction func loanTextFieldDidChange(_ sender: UITextField) {
         btnReset.isEnabled = true

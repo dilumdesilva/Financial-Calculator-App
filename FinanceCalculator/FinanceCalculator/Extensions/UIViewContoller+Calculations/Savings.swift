@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIViewController{
+    //MARK: - Calculations related to the savings without regular contributions
+    
+    
+    //MARK: - Calculations related to the savings with regular contributions
+}

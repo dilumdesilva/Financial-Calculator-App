@@ -9,7 +9,7 @@
 import UIKit
 
 let MORTGAGE_USER_DEFAULTS_KEY = "mortgage"
-private let MORTGAGE_USER_DEFAULTS_MAX_COUNT = 3
+private let MORTGAGE_USER_DEFAULTS_MAX_COUNT = 5
 
 class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet var viewScroller: UIScrollView!
@@ -48,17 +48,15 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        /// setting text field styles
-        loanAmountTextField._darkPlaceHolderColor(UIColor.darkText)
+        /// setting custom numeric keyboard
+        setCustomNumericKeyboard()
+    }
+    
+    /// Setting custom keyboard as the keyboard for all the text fields
+    func setCustomNumericKeyboard() {
         loanAmountTextField.setAsNumericKeyboard(delegate: self)
-        
-        interestTextField._darkPlaceHolderColor(UIColor.darkText)
         interestTextField.setAsNumericKeyboard(delegate: self)
-        
-        paymentTextField._darkPlaceHolderColor(UIColor.darkText)
         paymentTextField.setAsNumericKeyboard(delegate: self)
-        
-        numberOfTermsInMonths._darkPlaceHolderColor(UIColor.darkText)
         numberOfTermsInMonths.setAsNumericKeyboard(delegate: self)
         
         /// Obser which tracks the keyboard show event
@@ -142,7 +140,7 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
         /// PMT      -    Payment
         /// N           -    Number of Terms in months
         ///
-        if !isTextFieldEmpty() {
+        if validateTexFields() == 4 {
             let calculation = "P = \(loanAmountTextField.text!),  R = \(interestTextField.text!),\nPMT = \(paymentTextField.text!),  N = \(numberOfTermsInMonths.text!)"
             
             var arr = UserDefaults.standard.array(forKey: MORTGAGE_USER_DEFAULTS_KEY) as? [String] ?? []
@@ -154,7 +152,7 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
             arr.append(calculation)
             UserDefaults.standard.set(arr, forKey: MORTGAGE_USER_DEFAULTS_KEY)
             
-            showAlert(message: "You Mortgage Calculation has been saved successfully", title: "Saving Successfull")
+            showAlert(message: "You Mortgage Calculation has been saved check history section for saved data", title: "Saved Successfully")
             
         } else {
             showAlert(message: "You are trying to save an empty conversion!", title: "Moartage Calculation Saving Error")
@@ -239,19 +237,6 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
         interestTextField.text = ""
         paymentTextField.text = ""
         numberOfTermsInMonths.text = ""
-    }
-    
-    /// Resuable function to check whether the text feilds are empty
-    /// - Warning: This function needs to be changed when a new text field is added
-    ///
-    /// Usage:
-    ///     if isTextFieldsEmpty() // true | false
-    ///
-    func isTextFieldEmpty() -> Bool {
-        if !(loanAmountTextField.text?.isEmpty)!, !(interestTextField.text?.isEmpty)!, !(paymentTextField.text?.isEmpty)!, !(numberOfTermsInMonths.text?.isEmpty)! {
-            return false
-        }
-        return true
     }
     
     func numericKeyPressed(key: Int) {

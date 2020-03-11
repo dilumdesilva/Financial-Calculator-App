@@ -38,6 +38,12 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func handleSegmentedControllerChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            calculationType = SAVINGS_WORC_USER_DEFAULTS_KEY
+            icon = UIImage(named: "icon_s_savings")!
+        case 1:
+            calculationType = SAVINGS_WORC_USER_DEFAULTS_KEY
+            icon = UIImage(named: "icon_s_savings")!
         case 2:
             calculationType = LOAN_USER_DEFAULTS_KEY
             icon = UIImage(named: "icon_s_loan")!
@@ -119,7 +125,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Card(cell) styles
         cell.isUserInteractionEnabled = false
-        cell.contentView.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1.00)
+        cell.contentView.backgroundColor = UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1.00)
         cell.contentView.layer.cornerRadius = 10.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.00).cgColor
