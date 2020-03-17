@@ -99,6 +99,9 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
         default:
             break
         }
+        
+        compoundsPerYearTextField.textColor = UIColor.lightGray
+        compoundsPerYearTextField.text = "12"
     }
     
     func withoutRContributionViewSelected() {
@@ -122,23 +125,38 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
         }
     }
     
-    
     @IBAction func resetSavingsView(_ sender: Any) {
         resetTextFields()
     }
     
     @IBAction func performSavingsCalculations(_ sender: UIBarButtonItem) {
-        if validateTexFields() == 3{
-            /// calculate Missing Component
-            calculateMissingComponent()
+        if isSavingsWithRContributionSelected == false {
+            if validateTexFields() == 4 {
+                /// calculate Missing Component
+                calculateMissingComponent()
+                btnSave.isEnabled = true
+            } else if validateTexFields() == 5 {
+                showAlert(message: "Invalid Calculation. You must leave one field to proceed with a calculation", title: "Loan Calculation Warning")
+            } else {
+                showAlert(message: "Please fill at least three fields to perform a calculation", title: "Loan Calculation Warning")
+            }
         }
-       
+        if isSavingsWithRContributionSelected == true {
+            if validateTexFields() == 5 {
+                /// calculate Missing Component
+                calculateMissingComponent()
+                btnSave.isEnabled = true
+            } else if validateTexFields() == 6 {
+                showAlert(message: "Invalid Calculation. You must leave one field to proceed with a calculation", title: "Loan Calculation Warning")
+            } else {
+                showAlert(message: "Please fill at least three fields to perform a calculation", title: "Calculation Warning")
+            }
+        }
     }
-    
     
     @IBAction func saveSavingsCalculations(_ sender: UIBarButtonItem) {
         if isSavingsWithRContributionSelected == false {
-            if validateTexFields() == 3 {
+            if validateTexFields() == 5 {
                 let calculationWithoutRC = "P = \(presentValuleTextField.text!),  R = \(interestTextField.text!), Compunds = 12 ,FV = \(futureValueTextField.text!),  N = \(numberOfYearsTextField.text!)"
                 
                 var arr = UserDefaults.standard.array(forKey: SAVINGS_WORC_USER_DEFAULTS_KEY) as? [String] ?? []
@@ -153,11 +171,11 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
                 showAlert(message: "You Savings Calculation has been saved check history section for saved data", title: "Saved Successfully")
                 
             } else {
-                showAlert(message: "You are trying to Savings an empty conversion!", title: "Loan Calculation Saving Error")
+                showAlert(message: "You are trying to save an empty conversion!", title: "Calculation Saving Error")
             }
         }
         if isSavingsWithRContributionSelected == true {
-            if validateTexFields() == 3 {
+            if validateTexFields() == 6 {
                 let calculationWithRC = "P = \(presentValuleTextField.text!),  R = \(interestTextField.text!), Compunds = 12 ,FV = \(futureValueTextField.text!),  N = \(numberOfYearsTextField.text!),  PV = \(paymentValueTextField.text!)"
                 
                 var arr = UserDefaults.standard.array(forKey: SAVINGS_WRC_USER_DEFAULTS_KEY) as? [String] ?? []
@@ -167,7 +185,7 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
                 }
                 
                 arr.append(calculationWithRC)
-                UserDefaults.standard.set(arr, forKey: SAVINGS_WORC_USER_DEFAULTS_KEY)
+                UserDefaults.standard.set(arr, forKey: SAVINGS_WRC_USER_DEFAULTS_KEY)
                 
                 showAlert(message: "You Savings Calculation has been saved check history section for saved data", title: "Saved Successfully")
                 
@@ -175,9 +193,7 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
                 showAlert(message: "You are trying to Savings an empty conversion!", title: "Loan Calculation Saving Error")
             }
         }
-        
     }
-    
     
     func calculateMissingComponent() {
         let presentVal = Double(presentValuleTextField.text!)
@@ -287,7 +303,7 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
     }
     
     func validateTexFields() -> Int {
-        var counter = 0
+        var counter = 1
         if isSavingsWithRContributionSelected == false {
             if !(presentValuleTextField.text?.isEmpty)! { counter += 1 }
             if !(interestTextField.text?.isEmpty)! { counter += 1 }

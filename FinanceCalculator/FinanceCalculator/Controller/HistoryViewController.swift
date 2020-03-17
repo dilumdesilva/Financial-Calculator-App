@@ -14,8 +14,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var btnClearHistory: UIBarButtonItem!
     
     var histories = [History]()
-    var calculationType = MORTGAGE_USER_DEFAULTS_KEY
-    var icon: UIImage = UIImage(named: "icon_s_loan")!
+    var calculationType = SAVINGS_WORC_USER_DEFAULTS_KEY
+    var icon: UIImage = UIImage(named: "icon_s_savings")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             calculationType = SAVINGS_WORC_USER_DEFAULTS_KEY
             icon = UIImage(named: "icon_s_savings")!
         case 1:
-            calculationType = SAVINGS_WORC_USER_DEFAULTS_KEY
+            calculationType = SAVINGS_WRC_USER_DEFAULTS_KEY
             icon = UIImage(named: "icon_s_savings")!
         case 2:
             calculationType = LOAN_USER_DEFAULTS_KEY
