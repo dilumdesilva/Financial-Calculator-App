@@ -34,7 +34,7 @@ extension UIViewController {
     /// Calculation for principalAmount:
     ///     P = (PMT / R) * (1 - (1 / pow(1 + R, N)))
     ///
-    func missingLoanPrincipalAmount(interest: Double, monthlyPayment: Double, terms: Double) -> Double {
+    func calculateMissingLoanPrincipalAmount(interest: Double, monthlyPayment: Double, terms: Double) -> Double {
         let PMT = monthlyPayment
         let R = (interest / 100.0) / 12
         let N = terms
@@ -52,7 +52,7 @@ extension UIViewController {
     /// Calculation for monthly payment:
     ///
     ///
-    func missingLoanInterestRate(principalAmount: Double, monthlyPayment: Double, terms: Double) -> Double {
+    func calculateMissingLoanInterestRate(principalAmount: Double, monthlyPayment: Double, terms: Double) -> Double {
         /// initial calculation
         var x = 1 + (((monthlyPayment*terms/principalAmount) - 1) / 12)
         /// var x = 0.1;
@@ -76,7 +76,6 @@ extension UIViewController {
 
         /// Convert to yearly interest & Return as a percentage
         /// with two decimal fraction digits
-
         let R = Double(12 * x * 100).toFixed(2)
 
         /// if the found value for I is inf or less than zero
@@ -100,7 +99,7 @@ extension UIViewController {
     /// Calculation for monthly payment:
     ///     PMT = (R * P) / (1 - pow(1 + R, -N))
     ///
-    func missingLoanMonthlyPayment(interest: Double, principalAmount: Double, terms: Double) -> Double {
+    func calculateMissingLoanMonthlyPayment(interest: Double, principalAmount: Double, terms: Double) -> Double {
         let R = (interest / 100.0) / 12
         let P = principalAmount
         let N = terms
@@ -118,9 +117,9 @@ extension UIViewController {
     /// Calculation for monthly payment:
     ///     N = (log(D/(D-PV)) / log(1+I))
     ///
-    func missingLoanPaymentTerms(interest: Double, principalAmount: Double, monthlyPayment: Double) throws -> Int {
+    func calculateMissingLoanPaymentTerms(interest: Double, principalAmount: Double, monthlyPayment: Double) throws -> Int {
         /// To find the minimum monthly payment
-        let minMonthlyPayment = missingMonthlyPayment(interest: interest, principalAmount: principalAmount, terms: 1) - principalAmount
+        let minMonthlyPayment = calculateMissingLoanMonthlyPayment(interest: interest, principalAmount: principalAmount, terms: 1) - principalAmount
         
         if Int(monthlyPayment) <= Int(minMonthlyPayment) {
             throw calculationErr.runtimeError("Invalid monthly payment")
@@ -131,7 +130,7 @@ extension UIViewController {
         let I = (interest / 100.0) / 12
         let D = PMT / I
         let N = (log(D / (D - P)) / log(1 + I))
-        return Int(N.rounded())
+        return Int(N)
     }
     
     /// To indicate runtime errors during the calculations
@@ -139,4 +138,3 @@ extension UIViewController {
         case runtimeError(String)
     }
 }
-

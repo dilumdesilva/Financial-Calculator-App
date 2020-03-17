@@ -33,6 +33,11 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
     @IBOutlet var btnCalculate: UIBarButtonItem!
     @IBOutlet var btnSave: UIBarButtonItem!
     
+    /// Payment Time --> End of the month by default
+    @IBOutlet var paymentTimeLabel: UILabel!
+    @IBOutlet var paymentTimeSwitch: UISwitch!
+    var paymentTimeIsBeginning = false
+    
     var activeTextField = UITextField()
     var outerStackViewTopConstraintDefaultHeight: CGFloat = 10.0
     var textFieldToKeyBoardGap = 10
@@ -98,7 +103,85 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
     
     func withRContributionViewSelected() {
         isSavingsWithRContributionSelected = true
+        paymentTimeSwitch.isOn = false
         paymentValueStackView.isHidden = false
+    }
+    
+    @IBAction func paymentTimeChanged(_ sender: UISwitch) {
+        if paymentTimeSwitch.isOn == false {
+            paymentTimeLabel.text = "End of Month"
+            paymentTimeIsBeginning = false
+        } else {
+            paymentTimeLabel.text = "Begining of Month"
+            paymentTimeIsBeginning = true
+        }
+    }
+    
+    
+    @IBAction func resetSavingsView(_ sender: Any) {
+        resetTextFields()
+    }
+    
+    @IBAction func performSavingsCalculations(_ sender: UIBarButtonItem) {
+        calculateMissingComponent()
+    }
+    
+    
+    @IBAction func saveSavingsCalculations(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    
+    func calculateMissingComponent() {
+        let presentVal = Double(presentValuleTextField.text!)
+        let interest = Double(interestTextField.text!)
+        let compoundsPY = 12.0
+        let futureVal = Double(futureValueTextField.text!)
+        let numOfYears = Double(numberOfYearsTextField.text!)
+        let paymentVal = Double(paymentValueTextField.text!)
+        var missingValue = 0.0
+        /// Perform calculation for without regular contibtions
+        if isSavingsWithRContributionSelected == false {
+            if (presentValuleTextField.text?.isEmpty)! {
+                missingValue = findMissingWithoutRCPresentValue(interest: interest!, compoundsPerYear: compoundsPY, futureValue: futureVal!, noOfYears: numOfYears!)
+                presentValuleTextField.text = String(missingValue)
+            }
+            if (interestTextField.text?.isEmpty)! {
+                missingValue = findMissingWithoutRCInterest(presentValue: presentVal!, compoundsPerYear: compoundsPY, futureValue: futureVal!, noOfYears: numOfYears!)
+                interestTextField.text = String(missingValue)
+            }
+            if (futureValueTextField.text?.isEmpty)! {
+                missingValue = findMissingWithoutRCFutureValue(presentValue: presentVal!, interest: interest!, compoundsPerYear: compoundsPY, noOfYears: numOfYears!)
+                futureValueTextField.text = String(missingValue)
+            }
+            if (numberOfYearsTextField.text?.isEmpty)! {
+                missingValue = findMissingWithoutRCNumberOfPayments(presentValue: presentVal!, interest: interest!, compoundsPerYear: compoundsPY, futureValue: futureVal!)
+                numberOfYearsTextField.text = String(missingValue)
+            }
+        }
+        /// Perform calculations for with regualr contributions
+        if isSavingsWithRContributionSelected == true {
+            if (presentValuleTextField.text?.isEmpty)! {
+                missingValue = findMissingWithRCPresentValue(paymentTimeIsBeginning: paymentTimeIsBeginning, interest: interest!, compoundsPerYear: compoundsPY, futureValue: futureVal!, noOfYears: numOfYears!, paymentValue: paymentVal!)
+                presentValuleTextField.text = String(missingValue)
+            }
+            if (interestTextField.text?.isEmpty)! {
+                showAlert(message: "Currently unable to calulate interest for compound savings with regular contributions", title: "Unsupported Operation")
+                interestTextField.text = String(missingValue)
+            }
+            if (futureValueTextField.text?.isEmpty)! {
+                missingValue = findMissingFutureValue(paymentTimeIsBeginning: paymentTimeIsBeginning, presentValue: presentVal!, interest: interest!, compoundsPerYear: compoundsPY, noOfYears: numOfYears!, paymentValue: paymentVal!)
+                futureValueTextField.text = String(missingValue)
+            }
+            if (numberOfYearsTextField.text?.isEmpty)! {
+                missingValue = findMissingWithRCNumberOfYears(paymentTimeIsBeginning: paymentTimeIsBeginning, presentValue: presentVal!, interest: interest!, compoundsPerYear: compoundsPY, futureValue: futureVal!, paymentValue: paymentVal!)
+                numberOfYearsTextField.text = String(missingValue)
+            }
+            if (paymentValueTextField.text?.isEmpty)! {
+                missingValue = findMissingWithRCPaymentValue(paymentTimeIsBeginning: paymentTimeIsBeginning, presentValue: presentVal!, interest: interest!, compoundsPerYear: compoundsPY, futureValue: futureVal!, noOfYears: numOfYears!)
+                paymentValueTextField.text = String(missingValue)
+            }
+        }
     }
     
     /// This will function will invoked by the ui tap gesture
@@ -213,6 +296,12 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
         futureValueTextField.text = ""
         numberOfYearsTextField.text = ""
         paymentValueTextField.text = ""
+        
+        /// reset payementTime switch and label
+        if isSavingsWithRContributionSelected == true {
+            paymentTimeSwitch.isOn = false
+            paymentTimeLabel.text = "End of Month"
+        }
     }
     
     func numericKeyPressed(key: Int) {

@@ -189,20 +189,20 @@ class MortgageViewController: UIViewController, CustomKeyboardDelegate {
         /// Identify missing component
         var missingValue = 0.0
         if (loanAmountTextField.text?.isEmpty)! {
-            missingValue = missingPrincipalAmount(interest: R!, monthlyPayment: PMT!, terms: N!)
+            missingValue = calculateMissingPrincipalAmount(interest: R!, monthlyPayment: PMT!, terms: N!)
             loanAmountTextField.text = String(missingValue)
         }
         if (interestTextField.text?.isEmpty)! {
-            missingValue = missingInterestRate(principalAmount: P!, monthlyPayment: PMT!, terms: N!)
+            missingValue = calculateMissingInterestRate(principalAmount: P!, monthlyPayment: PMT!, terms: N!)
             interestTextField.text = String(missingValue)
         }
         if (paymentTextField.text?.isEmpty)! {
-            missingValue = missingMonthlyPayment(interest: R!, principalAmount: P!, terms: N!)
+            missingValue = calculateMissingMonthlyPayment(interest: R!, principalAmount: P!, terms: N!)
             paymentTextField.text = String(missingValue)
         }
         if (numberOfTermsInMonths.text?.isEmpty)! {
             do {
-                try missingValue = Double(missingPaymentTerms(interest: R!, principalAmount: P!, monthlyPayment: PMT!))
+                try missingValue = Double(calculateMissingPaymentTerms(interest: R!, principalAmount: P!, monthlyPayment: PMT!))
             } catch let err {
                 print(err)
             }

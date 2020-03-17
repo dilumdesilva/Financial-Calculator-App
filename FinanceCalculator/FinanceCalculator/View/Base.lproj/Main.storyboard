@@ -38,7 +38,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="zbt-MG-WtQ">
                                 <rect key="frame" x="20" y="116" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Savings"/>
                                     <segment title="Savings WRC"/>
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcA-Xx-uB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.6956521739135" y="2039.7321428571427"/>
+            <point key="canvasLocation" x="2605.7971014492755" y="2039.0625"/>
         </scene>
         <!--Help VC -->
         <scene sceneID="nhJ-lh-wog">
@@ -180,7 +180,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finance Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-sZ-TOQ">
-                                        <rect key="frame" x="59.666666666666657" y="386" width="294.66666666666674" height="42"/>
+                                        <rect key="frame" x="59.666666666666657" y="386" width="295" height="42"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="bottomRight" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="JVN-6G-wee" userLabel="Outer Stack View">
-                                                <rect key="frame" x="15" y="35" width="384" height="519"/>
+                                                <rect key="frame" x="15" y="35" width="384" height="528.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-EX-Xp9" userLabel="M Loan Amount TF Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="65.666666666666671"/>
@@ -356,7 +356,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ILF-0U-RjB" userLabel="M Payment TF Stack View">
                                                         <rect key="frame" x="0.0" y="181.33333333333331" width="384" height="65.666666666666686"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compounds Per Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrA-hs-Qef">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compounds Per Year (Fixed)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrA-hs-Qef">
                                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -413,16 +413,38 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TNo-Pl-uLW">
-                                                        <rect key="frame" x="0.0" y="453.33333333333337" width="384" height="65.666666666666629"/>
+                                                        <rect key="frame" x="0.0" y="453.33333333333337" width="384" height="75"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-3K-Q5O">
-                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21.666666666666668"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-FB-9T8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-3K-Q5O">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="31"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EEJ-mE-pOC">
+                                                                        <rect key="frame" x="192" y="0.0" width="192" height="31"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjh-s8-fMJ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="31"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4ff-uc-dep">
+                                                                                <rect key="frame" x="143" y="0.0" width="51" height="31"/>
+                                                                                <connections>
+                                                                                    <action selector="paymentTimeChanged:" destination="cRH-z4-1DB" eventType="valueChanged" id="gcy-Ev-Lpy"/>
+                                                                                </connections>
+                                                                            </switch>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-kD-a0O">
-                                                                <rect key="frame" x="0.0" y="31.666666666666629" width="384" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41" width="384" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
@@ -466,9 +488,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Savings" id="Cyd-yn-TJ1">
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_save" id="ofT-ib-Dzc"/>
-                            <barButtonItem image="play.fill" catalog="system" id="avK-BP-Pkb"/>
-                            <barButtonItem image="arrow.clockwise" catalog="system" id="zs8-7T-2yl"/>
+                            <barButtonItem image="icon_save" id="ofT-ib-Dzc">
+                                <connections>
+                                    <action selector="saveSavingsCalculations:" destination="cRH-z4-1DB" id="pfd-ud-hsY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="play.fill" catalog="system" id="avK-BP-Pkb">
+                                <connections>
+                                    <action selector="performSavingsCalculations:" destination="cRH-z4-1DB" id="xKk-8d-Yl8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="zs8-7T-2yl">
+                                <connections>
+                                    <action selector="resetSavingsView:" destination="cRH-z4-1DB" id="QCG-OW-aI4"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -481,6 +515,8 @@
                         <outlet property="numberOfYearsTextField" destination="jvH-gQ-PNN" id="FJr-4h-SQg"/>
                         <outlet property="outerStackView" destination="JVN-6G-wee" id="QdN-3f-DW6"/>
                         <outlet property="outerStackViewTopConstaint" destination="Fz4-yR-FdH" id="Qtu-uo-uXL"/>
+                        <outlet property="paymentTimeLabel" destination="mjh-s8-fMJ" id="yj4-Xd-SDI"/>
+                        <outlet property="paymentTimeSwitch" destination="4ff-uc-dep" id="gg1-CE-Cve"/>
                         <outlet property="paymentValueLabel" destination="VCD-3K-Q5O" id="fmH-s2-VFq"/>
                         <outlet property="paymentValueStackView" destination="TNo-Pl-uLW" id="ZkN-ei-vQj"/>
                         <outlet property="paymentValueTextField" destination="sFL-kD-a0O" id="yQc-e8-hs3"/>
