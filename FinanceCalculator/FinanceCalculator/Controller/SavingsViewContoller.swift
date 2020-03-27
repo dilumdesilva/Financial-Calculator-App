@@ -58,7 +58,7 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
             withRContributionViewSelected()
         }
         
-        if validateTexFields() == 0 {
+        if validateTexFields() == 1 {
             btnReset.isEnabled = false
             btnCalculate.isEnabled = false
             btnSave.isEnabled = false
@@ -353,7 +353,6 @@ class SavingsViewController: UIViewController, CustomKeyboardDelegate {
     func resetTextFields() {
         presentValuleTextField.text = ""
         interestTextField.text = ""
-        compoundsPerYearTextField.text = ""
         futureValueTextField.text = ""
         numberOfYearsTextField.text = ""
         paymentValueTextField.text = ""
