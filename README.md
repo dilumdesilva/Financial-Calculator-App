@@ -8,6 +8,14 @@ Native Mobile Development (iOS) Module - Coursework 01
 
 The **financial-calculator app** has the capability of undertaking typical financial calculations such as **savings, loans, and mortgages**. In addtion to that application contains a **help view** that contain instructions and guidance to the user on how to use the software. Moreover, following are some of the useful features that the application offers.
 
+### Main Features 
+- Calculate **Mortgage** related reqirements.
+- Calculate **Loan** related reqirements. 
+- Calculate **Savings with regular contributions** related reqirements. 
+- Calculate **Savings without regular contributions** related reqirements. 
+
+As the sub features relavant to the main features application includes following features as well.
+
 - Estimating interest rate.
 - Estimating final value.
 - Estimating present value.
