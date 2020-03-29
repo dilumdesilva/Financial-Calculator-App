@@ -51,5 +51,10 @@ understandability.
 6) All user data shall be persistently stored.
 7) Custom design numerical keyboard.
 
+### Application Screens
 
+![firstScreenSet](docs/firstScreenSet.png)
 
+![firstScreenSet](docs/secondScreenSet.png)
+
+![firstScreenSet](docs/ThirdScreenSet.png)
