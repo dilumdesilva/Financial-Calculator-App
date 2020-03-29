@@ -31,3 +31,17 @@ Above estimations/calculations have been done based on the financial data given 
 | CpY           | Payment due at the beginning or end of each period (default is END)    |
 
 
+### Non-functional requirements
+1) The app shall render correctly in all iPhone from 6 to iPhone 11 series
+2) Thestringsmustbeconsistentlyformattedandcorrectlyspelt.
+3) Currency must be correctly formatted to two decimal places e.g.
+£345.21.
+4) All financial calculations shall be mathematically correct to two decimal
+places.
+5) Code shall be commented to assist marking and to assist.
+understandability.
+6) All user data shall be persistently stored.
+7) Custom design numerical keyboard.
+
+
+
